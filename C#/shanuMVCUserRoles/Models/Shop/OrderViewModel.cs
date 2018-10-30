@@ -1,7 +1,7 @@
 ﻿using shanuMVCUserRoles.DTO;
 using System;
 
-namespace HAPINUT.Models.Shop
+namespace shanuMVCUserRoles.Models.Shop
 {
     public class OrderViewModel
     {
@@ -12,14 +12,14 @@ namespace HAPINUT.Models.Shop
 
         public OrderViewModel(Order order)
         {
-            OrderId = order.OrderId;
+            Id = order.Id;
             UserId = order.UserId;
             OrderDate = order.OrderDate;
         }
 
-        public int OrderId { get; set; }
-        public int UserId { get; set; }
-        public DateTime OrderDate { get; set; }
+        public int Id { get; set; }
+        public string UserId { get; set; }
+        public DateTime? OrderDate { get; set; }
 
 
     }

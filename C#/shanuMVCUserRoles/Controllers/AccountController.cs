@@ -166,7 +166,7 @@ namespace shanuMVCUserRoles.Controllers
                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     await UserManager.SendEmailAsync(user.Id, "Xác nhận tài khoản", "Vui lòng click vào link để xác nhận tài khoản <a href=\"" + callbackUrl + "\">Xác Nhận</a>");
                     //Assign Role to user Here   
-                    await this.UserManager.AddToRoleAsync(user.Id, "User");
+                    await this.UserManager.AddToRoleAsync(user.Id, "Employee");
                     //Ends Here 
                     //return RedirectToAction("Index", "Users");
                     return RedirectToAction("ForgotPasswordConfirmation", "Account");

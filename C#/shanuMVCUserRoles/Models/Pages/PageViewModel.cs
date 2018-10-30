@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
-namespace HAPINUT.Models.Pages
+namespace shanuMVCUserRoles.Models.Pages
 {
     public class PageViewModel
     {

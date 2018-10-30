@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace HAPINUT.Models.Shop
+namespace shanuMVCUserRoles.Models.Shop
 {
     public class ProductViewModel
     {
@@ -18,7 +18,7 @@ namespace HAPINUT.Models.Shop
             Price = product.Price;
             CategoryName = product.CategoryName;
             CategoryId = product.CategoryId;
-            Image = product.Image;
+            Image = product.ImageName;
         }
 
         public int Id { get; set; }

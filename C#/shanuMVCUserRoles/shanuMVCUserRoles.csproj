@@ -79,6 +79,7 @@
       <HintPath>..\packages\System.Net.Http.4.3.3\lib\net46\System.Net.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Security.Cryptography.Algorithms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net46\System.Security.Cryptography.Algorithms.dll</HintPath>
     </Reference>
@@ -207,13 +208,61 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
-    <Compile Include="DTO\Category.cs" />
-    <Compile Include="DTO\Order.cs" />
-    <Compile Include="DTO\OrderDetail.cs" />
-    <Compile Include="DTO\Page.cs" />
-    <Compile Include="DTO\Product.cs" />
+    <Compile Include="DTO\AspNetRole.cs">
+      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\AspNetUser.cs">
+      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\AspNetUserClaim.cs">
+      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\AspNetUserLogin.cs">
+      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Category.cs">
+      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\C__MigrationHistory.cs">
+      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\HAPINUTModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HAPINUTModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\HAPINUTModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\HAPINUTModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HAPINUTModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Order.cs">
+      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\OrderDetail.cs">
+      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Page.cs">
+      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Product.cs">
+      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\sysdiagram.cs">
+      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Topic.cs">
+      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -711,6 +760,16 @@
     <Content Include="Content\webfonts\fa-brands-400.svg" />
     <Content Include="Content\webfonts\fa-regular-400.svg" />
     <Content Include="Content\webfonts\fa-solid-900.svg" />
+    <Content Include="DTO\HAPINUTModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HAPINUTModel.edmx</DependentUpon>
+      <LastGenOutput>HAPINUTModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DTO\HAPINUTModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HAPINUTModel.edmx</DependentUpon>
+      <LastGenOutput>HAPINUTModel.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -811,6 +870,13 @@
     <Content Include="Connected Services\ASPSMSX2\shanuMVCUserRoles.ASPSMSX2.vouchers.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <EntityDeploy Include="DTO\HAPINUTModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HAPINUTModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DTO\HAPINUTModel.edmx.diagram">
+      <DependentUpon>HAPINUTModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\classie-search.js" />
     <Content Include="Scripts\Common.js" />
@@ -888,10 +954,13 @@
     <Content Include="Views\Role\Index.cshtml" />
     <Content Include="Views\Role\Create.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Shop\Index.cshtml" />
+    <Content Include="Views\Shop\ProductDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\Products\3\Gallery\" />
+    <Folder Include="Views\Page\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -906,6 +975,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ASPSMSX2\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -12,16 +12,13 @@ namespace shanuMVCUserRoles.DTO
     using System;
     using System.Collections.Generic;
     
-    public partial class OrderDetail
+    public partial class AspNetUserClaim
     {
         public int Id { get; set; }
-        public Nullable<int> OrderId { get; set; }
         public string UserId { get; set; }
-        public Nullable<int> ProductId { get; set; }
-        public Nullable<int> Quantity { get; set; }
+        public string ClaimType { get; set; }
+        public string ClaimValue { get; set; }
     
         public virtual AspNetUser AspNetUser { get; set; }
-        public virtual Order Order { get; set; }
-        public virtual Product Product { get; set; }
     }
 }

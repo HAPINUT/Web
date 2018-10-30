@@ -1,6 +1,6 @@
 ﻿using shanuMVCUserRoles.DTO;
 
-namespace HAPINUT.Models
+namespace shanuMVCUserRoles.Models
 {
     public class CategoryViewModel
     {

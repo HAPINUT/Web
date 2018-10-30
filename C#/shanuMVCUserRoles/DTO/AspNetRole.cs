@@ -12,22 +12,18 @@ namespace shanuMVCUserRoles.DTO
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class AspNetRole
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Order()
+        public AspNetRole()
         {
-            this.OrderDetails = new HashSet<OrderDetail>();
+            this.AspNetUsers = new HashSet<AspNetUser>();
         }
     
-        public int Id { get; set; }
-        public string UserId { get; set; }
-        public Nullable<System.DateTime> OrderDate { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
     
-        public virtual AspNetUser AspNetUser { get; set; }
-        public virtual Order Order1 { get; set; }
-        public virtual Order Order2 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual ICollection<AspNetUser> AspNetUsers { get; set; }
     }
 }

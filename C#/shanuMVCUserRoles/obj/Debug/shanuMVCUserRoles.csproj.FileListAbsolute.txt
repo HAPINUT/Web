@@ -238,3 +238,4 @@ C:\Users\ACER\Documents\CODE\Web_Peanut_Identity\C#\shanuMVCUserRoles\obj\Debug\
 C:\Users\ACER\Documents\CODE\Web_Peanut_Identity\C#\shanuMVCUserRoles\obj\Debug\shanuMVCUserRoles.csproj.CopyComplete
 C:\Users\ACER\Documents\CODE\Web_Peanut_Identity\C#\shanuMVCUserRoles\obj\Debug\shanuMVCUserRoles.dll
 C:\Users\ACER\Documents\CODE\Web_Peanut_Identity\C#\shanuMVCUserRoles\obj\Debug\shanuMVCUserRoles.pdb
+C:\Users\ACER\Documents\CODE\Web_Peanut_Identity\C#\shanuMVCUserRoles\obj\Debug\shanuMVCUserRoles.csprojAssemblyReference.cache
