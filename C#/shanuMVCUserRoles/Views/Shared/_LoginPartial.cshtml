@@ -1,0 +1,17 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+        <li class="button-log">
+            @Html.ActionLink(User.Identity.GetUserName(),"Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+        </li>
+        <li class="button-log"><a href="javascript:document.getElementById('logoutForm').submit()">Đăng xuất</a></li>
+    }
+}
+else
+{
+        <li class="button-log">@Html.ActionLink("Đăng ký", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li class="button-log">@Html.ActionLink("Đăng nhập", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+}

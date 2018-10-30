@@ -1,0 +1,68 @@
+﻿@model shanuMVCUserRoles.Models.IndexViewModel
+
+
+
+
+<section id="loginForm">
+    <div style="margin-bottom: 100px">
+        <h5 class="text-center mb-4" style="color:#ff4e00;">@ViewBag.Title.</h5>
+        <div class="login p-5 bg-dark mx-auto mw-100" style="left:50%; width:50%;">
+            <h4 style="color:#ff4e00;">Thông tin account</h4>
+            <p class="text-success">@ViewBag.StatusMessage</p>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt style="color:white;">Password:</dt>
+                <dd>
+                    [
+                    @if (Model.HasPassword)
+                    {
+                        @Html.ActionLink("Thay đổi password", "ChangePassword")
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Tạo mới", "SetPassword")
+                    }
+                    ]
+                </dd>
+                @*
+            Phone Numbers can used as a second factor of verification in a two-factor authentication system.
+
+             See <a href="http://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
+                for details on setting up this ASP.NET application to support two-factor authentication using SMS.
+
+             Uncomment the following block after you have set up two-factor authentication
+                *@
+
+                <dt style="color:white;">Số điện thoại: @(Model.PhoneNumber ?? "None")</dt>
+                <dd>
+                    [ @if (Model.PhoneNumber != null)
+                    {
+                        @Html.ActionLink("Thay đổi", "AddPhoneNumber")
+                        @: &nbsp;|&nbsp;
+                        @Html.ActionLink("Xóa", "RemovePhoneNumber")
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Thêm số điện thoại", "AddPhoneNumber")
+                    }
+                    ]
+                </dd>
+
+                @*<dt style="color:white;">Địa chỉ:</dt>
+                <dd>
+                    [ @if (Model. != null)
+                    {
+                        @Html.ActionLink("Thay đổi", "AddPhoneNumber")
+                        @: &nbsp;|&nbsp;
+                        @Html.ActionLink("Xóa", "RemovePhoneNumber")
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Thêm số điện thoại", "AddPhoneNumber")
+                    }
+                    ]
+                </dd>*@
+            </dl>
+        </div>
+    </div>
+</section>
