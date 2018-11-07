@@ -234,8 +234,8 @@ C:\Users\ACER\Documents\CODE\Web_Peanut_Identity\C#\shanuMVCUserRoles\bin\Micros
 C:\Users\ACER\Documents\CODE\Web_Peanut_Identity\C#\shanuMVCUserRoles\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\ACER\Documents\CODE\Web_Peanut_Identity\C#\shanuMVCUserRoles\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\ACER\Documents\CODE\Web_Peanut_Identity\C#\shanuMVCUserRoles\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\ACER\Documents\CODE\Web_Peanut_Identity\C#\shanuMVCUserRoles\obj\Debug\shanuMVCUserRoles.csprojAssemblyReference.cache
 C:\Users\ACER\Documents\CODE\Web_Peanut_Identity\C#\shanuMVCUserRoles\obj\Debug\shanuMVCUserRoles.csproj.CoreCompileInputs.cache
 C:\Users\ACER\Documents\CODE\Web_Peanut_Identity\C#\shanuMVCUserRoles\obj\Debug\shanuMVCUserRoles.csproj.CopyComplete
 C:\Users\ACER\Documents\CODE\Web_Peanut_Identity\C#\shanuMVCUserRoles\obj\Debug\shanuMVCUserRoles.dll
 C:\Users\ACER\Documents\CODE\Web_Peanut_Identity\C#\shanuMVCUserRoles\obj\Debug\shanuMVCUserRoles.pdb
-C:\Users\ACER\Documents\CODE\Web_Peanut_Identity\C#\shanuMVCUserRoles\obj\Debug\shanuMVCUserRoles.csprojAssemblyReference.cache
