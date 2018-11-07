@@ -218,55 +218,55 @@
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="DTO\AspNetRole.cs">
-      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\AspNetUser.cs">
-      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\AspNetUserClaim.cs">
-      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\AspNetUserLogin.cs">
-      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\Category.cs">
-      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\C__MigrationHistory.cs">
-      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DTO\HAPINUTModel.Context.cs">
+    <Compile Include="DTO\DataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HAPINUTModel.Context.tt</DependentUpon>
+      <DependentUpon>DataModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DTO\HAPINUTModel.cs">
+    <Compile Include="DTO\DataModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DTO\HAPINUTModel.Designer.cs">
+    <Compile Include="DTO\DataModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HAPINUTModel.edmx</DependentUpon>
+      <DependentUpon>DataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="DTO\Order.cs">
-      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\OrderDetail.cs">
-      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\Page.cs">
-      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\Product.cs">
-      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\sysdiagram.cs">
-      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\Topic.cs">
-      <DependentUpon>HAPINUTModel.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -985,15 +985,15 @@
     <Content Include="Content\webfonts\fa-brands-400.svg" />
     <Content Include="Content\webfonts\fa-regular-400.svg" />
     <Content Include="Content\webfonts\fa-solid-900.svg" />
-    <Content Include="DTO\HAPINUTModel.Context.tt">
+    <Content Include="DTO\DataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HAPINUTModel.edmx</DependentUpon>
-      <LastGenOutput>HAPINUTModel.Context.cs</LastGenOutput>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+      <LastGenOutput>DataModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DTO\HAPINUTModel.tt">
+    <Content Include="DTO\DataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HAPINUTModel.edmx</DependentUpon>
-      <LastGenOutput>HAPINUTModel.cs</LastGenOutput>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+      <LastGenOutput>DataModel.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -1095,12 +1095,12 @@
     <Content Include="Connected Services\ASPSMSX2\shanuMVCUserRoles.ASPSMSX2.vouchers.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <EntityDeploy Include="DTO\HAPINUTModel.edmx">
+    <EntityDeploy Include="DTO\DataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HAPINUTModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="DTO\HAPINUTModel.edmx.diagram">
-      <DependentUpon>HAPINUTModel.edmx</DependentUpon>
+    <Content Include="DTO\DataModel.edmx.diagram">
+      <DependentUpon>DataModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\classie-search.js" />
