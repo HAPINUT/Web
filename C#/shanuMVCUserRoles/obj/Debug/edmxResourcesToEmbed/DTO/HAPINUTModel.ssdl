@@ -103,7 +103,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="100" />
     <Property Name="Decription" Type="nvarchar" MaxLength="200" />
-    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
     <Property Name="CategoryName" Type="nvarchar" MaxLength="100" />
     <Property Name="CategoryId" Type="int" Nullable="false" />
     <Property Name="ImageName" Type="nvarchar" MaxLength="100" />

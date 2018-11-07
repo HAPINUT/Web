@@ -112,7 +112,7 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Decription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
     <Property Name="CategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="CategoryId" Type="Int32" Nullable="false" />
     <Property Name="ImageName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />

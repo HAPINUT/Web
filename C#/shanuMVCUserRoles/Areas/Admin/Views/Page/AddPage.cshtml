@@ -1,0 +1,47 @@
+﻿@model shanuMVCUserRoles.Models.Pages.PageViewModel
+
+@{
+    ViewBag.Title = "Tạo bài viết";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tạo bài viết</h2>
+
+@if (TempData["SM"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SM"]
+    </div>
+}
+
+<div class="box box-primary">
+    <div class="box-body">
+        @using (Html.BeginForm())
+        {
+            <div class="form-group">
+                @Html.LabelFor(model => model.Title)
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Body)
+                <div>
+                    @Html.TextAreaFor(model => model.Body, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="box-footer">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+
+    <script>
+        CKEDITOR.replace("Body");
+    </script>
+
+}

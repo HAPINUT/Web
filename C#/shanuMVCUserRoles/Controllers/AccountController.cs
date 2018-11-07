@@ -168,8 +168,7 @@ namespace shanuMVCUserRoles.Controllers
                     //Assign Role to user Here   
                     await this.UserManager.AddToRoleAsync(user.Id, "Employee");
                     //Ends Here 
-                    //return RedirectToAction("Index", "Users");
-                    return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                    return RedirectToAction("Index", "Users");
                 }
 				ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin"))
 										  .ToList(), "Name", "Name");
