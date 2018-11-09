@@ -6,13 +6,14 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Dầu đậu phộng, dầu lạc, peanut oil" />
     <script>
-    addEventListener("load", function () {
+        addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
         }, false);
 
         function hideURLbar() {
             window.scrollTo(0, 1);
-        }</script>
+        }
+    </script>
     <link href="~/Content/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/Content/css/login_overlay.css" rel='stylesheet' type='text/css' />
     <link href="~/Content/css/style6.css" rel='stylesheet' type='text/css' />
@@ -24,29 +25,6 @@
     <link href="//fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
           rel="stylesheet">
-    <link href="~/Content/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="~/Content/css/flexslider.css" type="text/css" media="screen" />
-
-    <!--search jQuery-->
-    <script src="~/Scripts/modernizr-2.6.2.min.js"></script>
-    <script src="~/Scripts/classie-search.js"></script>
-    <script src="~/Scripts/demo1-search.js"></script>
-    <script src="~/Scripts/move-top.js"></script>
-    <script src="~/Scripts/easing.js"></script>
-    <script src="~/Scripts/bootstrap.js"></script>
-    <!--jQuery-->
-    <script src="~/Scripts/jquery-2.2.3.min.js"></script>
-    <script src="~/Scripts/jquery.flexslider.js"></script>
-    <script src="~/Scripts/easy-responsive-tabs.js"></script>
-    <!-- newsletter modal -->
-    <!-- cart-js -->
-    <script src="~/Scripts/minicart.js"></script>
-    <script src="~/Scripts/jquery-ui.js"></script>
-    <!--//search jQuery-->
-    <!-- cart-js -->
-    <script src="~/Scripts/imagezoom.js"></script>
-    @*@Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")*@
 </head>
 <body>
     <div class="banner-top container-fluid" id="home">
@@ -88,7 +66,7 @@
                     </ul>
                 </div>
             </div>
-           @* @Html.Partial("_MenuPartial")*@
+            @* @Html.Partial("_MenuPartial")*@
         </header>
         @RenderBody()
         <!--footer -->
@@ -196,47 +174,138 @@
 </body>
 </html>
 
-@*<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+<script>
+    $(document).ready(function () {
+        $("#myModal").modal();
+    });
+</script>
+<!-- // modal -->
+<!--search jQuery-->
+<script src="~/Scripts/modernizr-2.6.2.min.js"></script>
+<script src="~/Scripts/classie-search.js"></script>
+<script src="~/Scripts/demo1-search.js"></script>
+<!--//search jQuery-->
+<!-- cart-js -->
+<script src="~/Scripts/minicart.js"></script>
+<script src="~/Scripts/jquery-2.2.3.min.js"></script>
+<script>
+    googles.render();
 
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    googles.cart.on('googles_checkout', function (evt) {
+        var items, len, i;
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-</body>
-</html>*@
+        if (this.subtotal() > 0) {
+            items = this.items();
+
+            for (i = 0, len = items.length; i < len; i++) { }
+        }
+    });
+</script>
+<!-- //cart-js -->
+<script>
+    $(document).ready(function () {
+        $(".button-log a").click(function () {
+            $(".overlay-login").fadeToggle(200);
+            $(this).toggleClass('btn-open').toggleClass('btn-close');
+        });
+    });
+    $('.overlay-close1').on('click', function () {
+        $(".overlay-login").fadeToggle(200);
+        $(".button-log a").toggleClass('btn-open').toggleClass('btn-close');
+        open = false;
+    });
+</script>
+<!-- carousel -->
+<!-- Count-down -->
+<script src="~/Scripts/simplyCountdown.js"></script>
+<link href="~/Content/css/simplyCountdown.css" rel='stylesheet' type='text/css' />
+<script>
+    var d = new Date();
+    simplyCountdown('simply-countdown-custom', {
+        year: d.getFullYear(),
+        month: d.getMonth() + 2,
+        day: 25
+    });
+</script>
+<!--// Count-down -->
+<script src="~/Scripts/owl.carousel.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 2,
+                    nav: false
+                },
+                900: {
+                    items: 3,
+                    nav: false
+                },
+                1000: {
+                    items: 4,
+                    nav: true,
+                    loop: false,
+                    margin: 20
+                }
+            }
+        })
+    })
+</script>
+
+<!-- //end-smooth-scrolling -->
+<!-- dropdown nav -->
+<script>
+    $(document).ready(function () {
+        $(".dropdown").hover(
+            function () {
+                $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                $(this).toggleClass('open');
+            },
+            function () {
+                $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                $(this).toggleClass('open');
+            }
+        );
+    });
+</script>
+<!-- //dropdown nav -->
+<script src="~/Scripts/move-top.js"></script>
+<script src="~/Scripts/easing.js"></script>
+<script>
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+            $('html,body').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 900);
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        /*
+                                var defaults = {
+                                      containerID: 'toTop', // fading element id
+                                    containerHoverID: 'toTopHover', // fading element hover id
+                                    scrollSpeed: 1200,
+                                    easingType: 'linear'
+                                 };
+                                */
+
+        $().UItoTop({
+            easingType: 'easeOutQuart'
+        });
+
+    });
+</script>
+<!--// end-smoth-scrolling -->
+
+<script src="~/Scripts/bootstrap.js"></script>
+<!-- js file -->

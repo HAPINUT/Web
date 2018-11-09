@@ -204,6 +204,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\PageController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ShopController.cs" />
     <Compile Include="Connected Services\ASPSMSX2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -504,6 +505,7 @@
     <Content Include="admin-lte\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="admin-lte\plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="Areas\Admin\Views\Page\AddPage.cshtml" />
+    <Content Include="Areas\Admin\Views\Shop\Categories.cshtml" />
     <None Include="Connected Services\ASPSMSX2\configuration91.svcinfo" />
     <None Include="Connected Services\ASPSMSX2\configuration.svcinfo" />
     <None Include="Connected Services\ASPSMSX2\Reference.svcmap">
