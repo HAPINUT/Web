@@ -203,8 +203,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\PageController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ShopController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PageManagementController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ShopManagementController.cs" />
     <Compile Include="Connected Services\ASPSMSX2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

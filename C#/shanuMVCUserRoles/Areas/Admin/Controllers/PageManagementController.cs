@@ -1,15 +1,13 @@
 ﻿using shanuMVCUserRoles.DTO;
 using shanuMVCUserRoles.Models.Pages;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace shanuMVCUserRoles.Areas.Admin.Controllers
 {
     [Authorize]
-    public class PageController : Controller
+    public class PageManagementController : Controller
     {
         // GET: Admin/Page
         public ActionResult Index()

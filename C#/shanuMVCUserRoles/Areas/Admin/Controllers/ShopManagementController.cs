@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace shanuMVCUserRoles.Areas.Admin.Controllers
 {
-    public class ShopController : Controller
+    public class ShopManagementController : Controller
     {
         // GET: Admin/Shop/Categories
         public ActionResult Categories()
