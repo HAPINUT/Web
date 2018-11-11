@@ -143,25 +143,24 @@ desired effect
                 </form>
                 <!-- /.search form -->
                 <!-- Sidebar Menu -->
-                <ul class="sidebar-menu" data-widget="tree">
+                <ul class="nav nav-second-level" data-widget="tree">
                     <li class="header">HEADER</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li>@Html.ActionLink("Bài Viết", "Index", "Page")</li>
+                    <li >@Html.ActionLink("Bài Viết", "Index", "PageManagement")</li>
 
                     <li>
                         <a href="#">Quản Lý Cửa Hàng<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                @Html.ActionLink("Loại Sản Phẩm", "Categories", "Shop")
+                                @Html.ActionLink("Loại Sản Phẩm", "Categories", "ShopManagement")
                             </li>
                             <li>
-                                @Html.ActionLink("Sản Phẩm", "Products", "Shop")
+                                @Html.ActionLink("Sản Phẩm", "Products", "ShopManagement")
                             </li>
                         </ul>
+                    </li>
                 </ul>
                 <!-- /.nav-second-level -->
-                </li>
-                </ul>
                 <!-- /.sidebar-menu -->
             </section>
             <!-- /.sidebar -->

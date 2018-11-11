@@ -67,6 +67,12 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="SendGrid, Version=9.10.0.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
       <HintPath>..\packages\Sendgrid.9.10.0\lib\net452\SendGrid.dll</HintPath>
     </Reference>
@@ -501,11 +507,14 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="admin-lte\css\adminlte.min.css.map" />
     <Content Include="admin-lte\css\adminlte.css.map" />
-    <Content Include="Areas\Admin\Views\Page\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PageManagement\Index.cshtml" />
     <Content Include="admin-lte\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="admin-lte\plugins\input-mask\phone-codes\phone-codes.json" />
-    <Content Include="Areas\Admin\Views\Page\AddPage.cshtml" />
-    <Content Include="Areas\Admin\Views\Shop\Categories.cshtml" />
+    <Content Include="Areas\Admin\Views\PageManagement\AddPage.cshtml" />
+    <Content Include="Areas\Admin\Views\ShopManagement\Categories.cshtml" />
+    <Content Include="Areas\Admin\Views\ShopManagement\AddProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\ShopManagement\Products.cshtml" />
+    <Content Include="Areas\Admin\Views\ShopManagement\EditProduct.cshtml" />
     <None Include="Connected Services\ASPSMSX2\configuration91.svcinfo" />
     <None Include="Connected Services\ASPSMSX2\configuration.svcinfo" />
     <None Include="Connected Services\ASPSMSX2\Reference.svcmap">
@@ -976,6 +985,7 @@
     <Content Include="Content\images\team3.jpg" />
     <Content Include="Content\images\team4.jpg" />
     <Content Include="Content\images\up_arrow.png" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\tether\tether-theme-arrows-dark.css" />
     <Content Include="Content\tether\tether-theme-arrows-dark.min.css" />
     <Content Include="Content\tether\tether-theme-arrows.css" />
@@ -1109,6 +1119,14 @@
     <Content Include="Scripts\Common.js" />
     <Content Include="Scripts\creditly.js" />
     <Content Include="Scripts\demo1-search.js" />
+    <Content Include="Scripts\dropzone\basic.css" />
+    <Content Include="Scripts\dropzone\basic.min.css" />
+    <Content Include="Scripts\dropzone\dropzone-amd-module.js" />
+    <Content Include="Scripts\dropzone\dropzone-amd-module.min.js" />
+    <Content Include="Scripts\dropzone\dropzone.css" />
+    <Content Include="Scripts\dropzone\dropzone.js" />
+    <Content Include="Scripts\dropzone\dropzone.min.css" />
+    <Content Include="Scripts\dropzone\dropzone.min.js" />
     <Content Include="Scripts\easing.js" />
     <Content Include="Scripts\easy-responsive-tabs.js" />
     <Content Include="Scripts\imagezoom.js" />

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta name="keywords" content="Dầu đậu phộng, dầu lạc, peanut oil" />
-    <script>
+    @*<script>
         addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
         }, false);
@@ -13,7 +13,7 @@
         function hideURLbar() {
             window.scrollTo(0, 1);
         }
-    </script>
+    </script>*@
     <link href="~/Content/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/Content/css/login_overlay.css" rel='stylesheet' type='text/css' />
     <link href="~/Content/css/style6.css" rel='stylesheet' type='text/css' />
@@ -42,9 +42,7 @@
                 </div>
                 <div class="col-md-6 logo-w3layouts text-center">
                     <h1 class="logo-w3layouts">
-                        <a class="navbar-brand" href="index.html">
-                            PEANUT OIL
-                        </a>
+                       @Html.ActionLink("PEANUT OIL","Shop",null,new {@class = "navbar-brand" })
                     </h1>
                     <h4 style="color:#ff4e00;">
                         Dầu Lạc Xứ Quảng
@@ -66,6 +64,79 @@
                     </ul>
                 </div>
             </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light top-header mb-2">
+
+                <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav-mega mx-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link ml-lg-0" href="index.html">
+                                TRANG CHỦ
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">GIỚI THIỆU</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">
+                                SẢN PHẨM
+                            </a>
+                            <ul class="dropdown-menu mega-menu ">
+                                <li class="media-mini mt-3">
+                                    <a href="shop.html">Designer Glasses</a>
+                                </li>
+                                <li class="">
+                                    <a href="shop.html"> Ray-Ban</a>
+                                </li>
+                                <li>
+                                    <a href="shop.html">Prescription Glasses</a>
+                                </li>
+                                <li class="mt-2">
+                                    <a href="about.html">About</a>
+                                </li>
+                                <li>
+                                    <a href="customer.html">Customers</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">
+                                BLOG
+                            </a>
+                            <ul class="dropdown-menu mega-menu ">
+                                <li class="media-mini mt-3">
+                                    <a href="shop.html">Designer Glasses</a>
+                                </li>
+                                <li class="">
+                                    <a href="shop.html"> Ray-Ban</a>
+                                </li>
+                                <li>
+                                    <a href="shop.html">Prescription Glasses</a>
+                                </li>
+                                <li class="mt-2">
+                                    <a href="about.html">About</a>
+                                </li>
+                                <li>
+                                    <a href="customer.html">Customers</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">LIÊN HỆ</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+
             @* @Html.Partial("_MenuPartial")*@
         </header>
         @RenderBody()
@@ -174,7 +245,7 @@
 </body>
 </html>
 
-<script>
+@*<script>
     $(document).ready(function () {
         $("#myModal").modal();
     });
@@ -307,5 +378,5 @@
 </script>
 <!--// end-smoth-scrolling -->
 
-<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>*@
 <!-- js file -->

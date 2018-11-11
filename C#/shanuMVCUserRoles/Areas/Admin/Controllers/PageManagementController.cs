@@ -3,6 +3,7 @@ using shanuMVCUserRoles.Models.Pages;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using PagedList;
 
 namespace shanuMVCUserRoles.Areas.Admin.Controllers
 {
@@ -10,16 +11,23 @@ namespace shanuMVCUserRoles.Areas.Admin.Controllers
     public class PageManagementController : Controller
     {
         // GET: Admin/Page
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
             // Declare list of PageVM
             List<PageViewModel> pagesList;
+
+            // Set page number
+            var pageNumber = page ?? 1;
 
             using (HAPINUTSHOPEntities db = new HAPINUTSHOPEntities())
             {
                 // Init the list
                 pagesList = db.Pages.ToArray().OrderBy(x => x.Title).Select(x => new PageViewModel(x)).ToList();
             }
+
+            // Set pagination
+            var onePageOfPages = pagesList.ToPagedList(pageNumber, 10);
+            ViewBag.OnePageOfPages = onePageOfPages;
 
             // Return view with list
             return View(pagesList);

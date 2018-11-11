@@ -6,6 +6,13 @@
 
 <h2>Danh Sách Loại Sản Phẩm</h2>
 
+@if (TempData["SM"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SM"]
+    </div>
+}
+
 <div class="new-cat">
     <input type="text" id="newcatname" />
     <p>
@@ -71,25 +78,19 @@ else
                 e.preventDefault();
 
                 var catName = newCatTextInput.val();
-
-                if (catName.length < 2) {
-                    alert("Category name must be at least 2 characters long.");
-                    return false;
-                }
-
                 ajaxText.show();
 
-                var url = "/admin/shop/AddNewCategory";
+                var url = "/Admin/ShopManagement/AddNewCategory";
 
                 $.post(url, { catName: catName }, function (data) {
 
                     var response = data.trim();
 
                     if (response == "titletaken") {
-                        ajaxText.html("<span class='alert alert-danger'>That title is taken!</span>");
+                        ajaxText.html("<span class='alert alert-danger'>Vui lòng thay đổi tên khác!</span>");
                         setTimeout(function () {
                             ajaxText.fadeOut("fast", function () {
-                                ajaxText.html("<img src=/Content/img/ajax-loader.gif />");
+                                ajaxText.html("<img src=~/Content/img/ajax-loader.gif />");
                             });
                         }, 2000);
                         return false;
@@ -101,7 +102,7 @@ else
                             ajaxText.html("<span class='alert alert-success'>Thêm loại sản phẩm thành công!");
                             setTimeout(function () {
                                 ajaxText.fadeOut("fast", function () {
-                                    ajaxText.html("<img src=/Content/img/ajax-loader.gif />");
+                                    ajaxText.html("<img src=~/Content/img/ajax-loader.gif />");
                                 });
                             }, 2000);
 
@@ -110,7 +111,7 @@ else
                             var toAppend = $("table#pages tbody tr:last").clone();
                             toAppend.attr("id", "id_" + data);
                             toAppend.find("#item_Name").val(catName);
-                            toAppend.find("a.delete").attr("href", "/admin/shop/DeleteCategory/" + data);
+                            toAppend.find("a.delete").attr("href", "/admin/ShopManagement/DeleteCategory/" + data);
                             table.append(toAppend);
                             table.sortable("refresh");
                         }
@@ -130,7 +131,7 @@ else
                 placeholder: "ui-state-highlight",
                 update: function () {
                     var ids = $("table#pages tbody").sortable("serialize");
-                    var url = "/Admin/Shop/ReorderCategories";
+                    var url = "/Admin/ShopManagement/ReorderCategories";
 
                     $.post(url, ids, function (data) {
                     });
@@ -173,7 +174,7 @@ else
                 var ajaxdiv = $this.parent().find(".ajaxdivtd");
                 var newCatName = $this.val();
                 var id = $this.parent().parent().attr("id").substring(3);
-                var url = "/admin/shop/RenameCategory";
+                var url = "/admin/ShopManagement/RenameCategory";
 
                 $.post(url, { newCatName: newCatName, id: id }, function (data) {
                     var response = data.trim();
