@@ -4,6 +4,9 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
+@using PagedList.Mvc;
+@using PagedList;
+
 @if (!Model.Any())
 {
     <h1 class="text-center">There are no pages.</h1>
@@ -26,11 +29,11 @@ else
                     <th></th>
                 </tr>
             </thead>
-            @foreach (var item in Model)
+            @foreach (var item in ViewBag.OnePageOfPages)
             {
                 <tr id="id_@item.Id">
                     <td>
-                        @Html.DisplayFor(modelItem => item.Title)
+                        @item.Title
                     </td>
                     <td>
                         @Html.ActionLink("Edit", "EditPage", new { id = item.Id }) |
@@ -41,6 +44,7 @@ else
             }
 
         </table>
+        @Html.PagedListPager((IPagedList)ViewBag.OnePageOfPages, page => Url.Action("Index", new { page}))
     </div>
 }
 

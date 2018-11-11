@@ -1,0 +1,117 @@
+﻿@model IEnumerable<shanuMVCUserRoles.Models.Shop.ProductViewModel>
+
+@{
+    /**/
+
+    /**/
+
+    ViewBag.Title = "Danh Sách Sản Phẩm";
+}
+
+@using PagedList.Mvc;
+@using PagedList;
+
+<h2>@ViewBag.Title</h2>
+
+<select id="SelectCategory" name="SelectCategory">
+    <option value="0">Tất cả</option>
+    @foreach (var item in ViewBag.Categories)
+    {
+        if (ViewBag.SelectedCat == item.Value)
+        {
+            <option selected="selected" value="@item.Value">@item.Text</option>
+        }
+        else
+        {
+            <option value="@item.Value">@item.Text</option>
+        }
+    }
+</select>
+<br /><br />
+
+<p>
+    @Html.ActionLink("Thêm Sản Phẩm", "AddProduct")
+</p>
+
+<table class="table">
+    <tr style="background-color:slategray; color: white">
+        <th>
+            Tên Sản Phẩm
+        </th>
+        <th>
+            Mô Tả
+        </th>
+        <th>
+            Giá
+        </th>
+        <th>
+            Hình Ảnh
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var product in ViewBag.OnePageOfProducts)
+    {
+        <tr>
+            <td>
+                @product.Name
+            </td>
+            <td>
+                @product.Decription
+            </td>
+            <td>
+                @product.Price
+            </td>
+            <td>
+                <a href="/admin/shopmanagement/EditProduct/@product.Id">
+                    <img src="/Images/Products/@product.Id/Thumbs/@product.Image" width="100" height="100"/>
+                </a>
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditProduct", new { id = product.Id }) |
+                @Html.ActionLink("Delete", "DeleteProduct", new { id = product.Id }, new { @class = "delete" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+@Html.PagedListPager((IPagedList)ViewBag.OnePageOfProducts, page => Url.Action("Products", new { page, catId = ViewBag.SelectedCat }))
+
+@section Scripts {
+    <script src="http://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script>
+
+        $(function () {
+
+            /*
+            * Select products from specified category
+            */
+
+            $("#SelectCategory").on("change", function () {
+                var url = $(this).val();
+
+                if (url) {
+                    window.location = "/admin/shopmanagement/Products?catId=" + url;
+                }
+
+                return false;
+            });
+
+            //////////////////////////////////////////////////////////////
+
+            /*
+            * Confirm product deletion
+            */
+
+            $("a.delete").click(function () {
+                if (!confirm("Confirm product deletion")) return false;
+            });
+
+            //////////////////////////////////////////////////////////////
+
+        });
+
+    </script>
+
+}
