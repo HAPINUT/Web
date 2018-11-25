@@ -985,6 +985,23 @@
     <Content Include="Content\images\team3.jpg" />
     <Content Include="Content\images\team4.jpg" />
     <Content Include="Content\images\up_arrow.png" />
+    <Content Include="Content\js\bootstrap.js" />
+    <Content Include="Content\js\classie-search.js" />
+    <Content Include="Content\js\creditly.js" />
+    <Content Include="Content\js\demo1-search.js" />
+    <Content Include="Content\js\easing.js" />
+    <Content Include="Content\js\easy-responsive-tabs.js" />
+    <Content Include="Content\js\imagezoom.js" />
+    <Content Include="Content\js\jquery-2.2.3.min.js" />
+    <Content Include="Content\js\jquery-ui.js" />
+    <Content Include="Content\js\jquery.easing.min.js" />
+    <Content Include="Content\js\jquery.flexslider.js" />
+    <Content Include="Content\js\jquery.magnific-popup.js" />
+    <Content Include="Content\js\minicart.js" />
+    <Content Include="Content\js\modernizr-2.6.2.min.js" />
+    <Content Include="Content\js\move-top.js" />
+    <Content Include="Content\js\owl.carousel.js" />
+    <Content Include="Content\js\simplyCountdown.js" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\tether\tether-theme-arrows-dark.css" />
     <Content Include="Content\tether\tether-theme-arrows-dark.min.css" />
@@ -1206,12 +1223,12 @@
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Shop\Index.cshtml" />
     <Content Include="Views\Shop\ProductDetails.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Images\Products\3\Gallery\" />
-    <Folder Include="Views\Cart\" />
     <Folder Include="Views\Page\" />
   </ItemGroup>
   <ItemGroup>

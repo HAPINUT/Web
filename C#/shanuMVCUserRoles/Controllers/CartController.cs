@@ -12,6 +12,13 @@ namespace shanuMVCUserRoles.Controllers
 {
     public class CartController : Controller
     {
+
+        // GET: Cart
+        public ActionResult Index()
+        {
+            return View();
+        }
+        /*
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -45,8 +52,7 @@ namespace shanuMVCUserRoles.Controllers
             }
         }
 
-        //
-        // GET: Cart
+        GET: Cart
         public ActionResult Index()
         {
             // Init the cart list
@@ -305,6 +311,6 @@ namespace shanuMVCUserRoles.Controllers
 
             // Reset session
             Session["cart"] = null;
-        }
+        }*/
     }
 }

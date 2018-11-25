@@ -40,8 +40,8 @@ namespace shanuMVCUserRoles.Controllers
 
 
             // Get gallery images
-            productVM.GalleryImages = Directory.EnumerateFiles(Server.MapPath("~/Images/Products/" + id + "/Gallery/Thumbs"))
-                                                .Select(fn => Path.GetFileName(fn));
+            //productVM.GalleryImages = Directory.EnumerateFiles(Server.MapPath("~/Images/Products/" + id + "/Gallery/Thumbs"))
+            //                                    .Select(fn => Path.GetFileName(fn));
 
             // Return view with model
             return View("ProductDetails", productVM);

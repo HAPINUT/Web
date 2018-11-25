@@ -1,20 +1,4 @@
-﻿<!--
-    Author: W3layouts
-    Author URL: http://w3layouts.com
-    License: Creative Commons Attribution 3.0 Unported
-    License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<script>
-    addEventListener("load", function () {
-        setTimeout(hideURLbar, 0);
-    }, false);
-
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    }
-</script>
-
-<!-- banner -->
+﻿<!-- banner -->
 <div class="banner">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -72,8 +56,8 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    <!--//banner -->
 </div>
+<!--//banner -->
 <!--//banner-sec-->
 <section class="banner-bottom-wthreelayouts py-lg-5 py-3">
     <div class="container-fluid">
@@ -85,7 +69,7 @@
                     <div class="product-googles-info googles">
                         <div class="men-pro-item">
                             <div class="men-thumb-item">
-                                <img src="images/SP_2lit.jpg" class="img-fluid" alt="">
+                                <img src="~/Content/images/SP_2lit.jpg" class="img-fluid" alt="">
                                 <div class="men-cart-pro">
                                     <div class="inner-men-cart-pro">
                                         <a href="single.html" class="link-product-add-cart">Xem chi tiết</a>
@@ -156,7 +140,7 @@
                     <div class="product-googles-info googles">
                         <div class="men-pro-item">
                             <div class="men-thumb-item">
-                                <img src="images/SP_2lit.jpg" class="img-fluid" alt="">
+                                <img src="~/Content/images/SP_2lit.jpg" class="img-fluid" alt="">
                                 <div class="men-cart-pro">
                                     <div class="inner-men-cart-pro">
                                         <a href="single.html" class="link-product-add-cart">Xem chi tiết</a>
@@ -227,7 +211,7 @@
                     <div class="product-googles-info googles">
                         <div class="men-pro-item">
                             <div class="men-thumb-item">
-                                <img src="images/SP_1lit.jpg" class="img-fluid" alt="">
+                                <img src="~/Content/images/SP_1lit.jpg" class="img-fluid" alt="">
                                 <div class="men-cart-pro">
                                     <div class="inner-men-cart-pro">
                                         <a href="single.html" class="link-product-add-cart">Xem chi tiết</a>
@@ -298,7 +282,7 @@
                     <div class="product-googles-info googles">
                         <div class="men-pro-item">
                             <div class="men-thumb-item">
-                                <img src="images/SP_1lit.jpg" class="img-fluid" alt="">
+                                <img src="~/Content/images/SP_1lit.jpg" class="img-fluid" alt="">
                                 <div class="men-cart-pro">
                                     <div class="inner-men-cart-pro">
                                         <a href="single.html" class="link-product-add-cart">Xem chi tiết</a>
@@ -437,7 +421,7 @@
             <div class="row galsses-grids pt-lg-5 pt-3">
                 <div class="col-lg-6 galsses-grid-left">
                     <figure class="effect-lexi">
-                        <img src="images/banner_SP1_1.jpg" alt="" class="img-fluid">
+                        <img src="~/Content/images/banner_SP1_1.jpg" alt="" class="img-fluid">
                         <figcaption>
                             <h3>
                                 Editor's
@@ -449,7 +433,7 @@
                 </div>
                 <div class="col-lg-6 galsses-grid-left">
                     <figure class="effect-lexi">
-                        <img src="images/banner_SP2.jpg" alt="" class="img-fluid">
+                        <img src="~/Content/images/banner_SP2.jpg" alt="" class="img-fluid">
                         <figcaption>
                             <h3>
                                 Editor's
@@ -549,12 +533,7 @@
     </div>
 </section>
 <!-- about -->
-<!--footer -->
-<!-- //footer -->
-<!--jQuery-->
-<script src="~/Scripts/jquery-2.2.3.min.js"></script>
-<!-- newsletter modal -->
-<!-- Modal -->
+<!-- Count-down -->
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -586,136 +565,19 @@
     </div>
 </div>
 <script>
-    $(document).ready(function () {
-        $("#myModal").modal();
-    });
+		$(document).ready(function () {
+			$("#myModal").modal();
+		});
 </script>
 <!-- // modal -->
-<!--search jQuery-->
-<script src="~/Scripts/modernizr-2.6.2.min.js"></script>
-<script src="~/Scripts/classie-search.js"></script>
-<script src="~/Scripts/demo1-search.js"></script>
-<!--//search jQuery-->
-<!-- cart-js -->
-<script src="~/Scripts/minicart.js"></script>
-<script>
-    googles.render();
-
-    googles.cart.on('googles_checkout', function (evt) {
-        var items, len, i;
-
-        if (this.subtotal() > 0) {
-            items = this.items();
-
-            for (i = 0, len = items.length; i < len; i++) { }
-        }
-    });
-</script>
-<!-- //cart-js -->
-<script>
-    $(document).ready(function () {
-        $(".button-log a").click(function () {
-            $(".overlay-login").fadeToggle(200);
-            $(this).toggleClass('btn-open').toggleClass('btn-close');
-        });
-    });
-    $('.overlay-close1').on('click', function () {
-        $(".overlay-login").fadeToggle(200);
-        $(".button-log a").toggleClass('btn-open').toggleClass('btn-close');
-        open = false;
-    });
-</script>
-<!-- carousel -->
-<!-- Count-down -->
-<script src="~/Scripts/simplyCountdown.js"></script>
+<script src="~/Content/js/simplyCountdown.js"></script>
 <link href="~/Content/css/simplyCountdown.css" rel='stylesheet' type='text/css' />
 <script>
-    var d = new Date();
-    simplyCountdown('simply-countdown-custom', {
-        year: d.getFullYear(),
-        month: d.getMonth() + 2,
-        day: 25
-    });
+		var d = new Date();
+		simplyCountdown('simply-countdown-custom', {
+			year: d.getFullYear(),
+			month: d.getMonth() + 2,
+			day: 25
+		});
 </script>
 <!--// Count-down -->
-<script src="~/Scripts/owl.carousel.js"></script>
-<script>
-    $(document).ready(function () {
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            margin: 10,
-            responsiveClass: true,
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: true
-                },
-                600: {
-                    items: 2,
-                    nav: false
-                },
-                900: {
-                    items: 3,
-                    nav: false
-                },
-                1000: {
-                    items: 4,
-                    nav: true,
-                    loop: false,
-                    margin: 20
-                }
-            }
-        })
-    })
-</script>
-
-<!-- //end-smooth-scrolling -->
-<!-- dropdown nav -->
-<script>
-      {
-        $(".dropdown").hover(
-            function () {
-                $('.dropdown-menu', this).stop(true, true).slideDown("fast");
-                $(this).toggleClass('open');
-            },
-            function () {
-                $('.dropdown-menu', this).stop(true, true).slideUp("fast");
-                $(this).toggleClass('open');
-            }
-        );
-    });
-</script>
-<!-- //dropdown nav -->
-<script src="~/Scripts/move-top.js"></script>
-<script src="~/Scripts/easing.js"></script>
-<script>
-    jQuery(document).ready(function ($) {
-        $(".scroll").click(function (event) {
-            event.preventDefault();
-            $('html,body').animate({
-                scrollTop: $(this.hash).offset().top
-            }, 900);
-        });
-    });
-</script>
-<script>
-    $(document).ready(function () {
-        /*
-                                var defaults = {
-                                      containerID: 'toTop', // fading element id
-                                    containerHoverID: 'toTopHover', // fading element hover id
-                                    scrollSpeed: 1200,
-                                    easingType: 'linear'
-                                 };
-                                */
-
-        $().UItoTop({
-            easingType: 'easeOutQuart'
-        });
-
-    });
-</script>
-<!--// end-smoth-scrolling -->
-
-<script src="~/Scripts/bootstrap.js"></script>
-<!-- js file -->
