@@ -284,7 +284,7 @@ namespace shanuMVCUserRoles.Areas.Admin.Controllers
             #endregion
 
             // Redirect
-            return RedirectToAction("AddProduct");
+            return RedirectToAction("Products");
         }
 
         // GET: Admin/Shop/Products
@@ -471,7 +471,7 @@ namespace shanuMVCUserRoles.Areas.Admin.Controllers
             #endregion
 
             // Redirect
-            return RedirectToAction("EditProduct");
+            return RedirectToAction("Products");
         }
 
         // GET: Admin/Shop/DeleteProduct/id
