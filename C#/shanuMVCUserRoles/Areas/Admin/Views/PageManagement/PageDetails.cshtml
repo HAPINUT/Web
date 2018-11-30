@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "PageDetails";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model shanuMVCUserRoles.Models.Pages.PageViewModel
+
+<h2>Page Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Body)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Body)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "EditPage", new { id = Model.Id }) |
+    @Html.ActionLink("Trở lại", "Index")
+</p>

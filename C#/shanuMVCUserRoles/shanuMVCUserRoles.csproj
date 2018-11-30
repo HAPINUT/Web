@@ -211,6 +211,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\PageManagementController.cs" />
     <Compile Include="Areas\Admin\Controllers\ShopManagementController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Connected Services\ASPSMSX2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -515,6 +516,8 @@
     <Content Include="Areas\Admin\Views\ShopManagement\AddProduct.cshtml" />
     <Content Include="Areas\Admin\Views\ShopManagement\Products.cshtml" />
     <Content Include="Areas\Admin\Views\ShopManagement\EditProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\PageManagement\EditPage.cshtml" />
+    <Content Include="Areas\Admin\Views\PageManagement\PageDetails.cshtml" />
     <None Include="Connected Services\ASPSMSX2\configuration91.svcinfo" />
     <None Include="Connected Services\ASPSMSX2\configuration.svcinfo" />
     <None Include="Connected Services\ASPSMSX2\Reference.svcmap">
@@ -1228,6 +1231,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\User\" />
     <Folder Include="Images\Products\3\Gallery\" />
     <Folder Include="Views\Page\" />
   </ItemGroup>

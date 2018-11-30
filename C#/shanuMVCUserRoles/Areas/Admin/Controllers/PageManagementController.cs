@@ -83,5 +83,109 @@ namespace shanuMVCUserRoles.Areas.Admin.Controllers
             // Redirect
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ActionResult EditPage (int id)
+        {
+            PageViewModel model;
+            using (HAPINUTSHOPEntities db = new HAPINUTSHOPEntities())
+            {
+                Page dto = db.Pages.Find(id);
+
+                if (dto == null)
+                {
+                    return Content("Bài viết không tồn tại!");
+                }
+
+                model = new PageViewModel(dto);
+            }
+            return View(model);
+        }
+
+        // POST: Admin/Pages/EditPage/id
+        [HttpPost]
+        public ActionResult EditPage(PageViewModel model)
+        {
+            // Check model state
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            using (HAPINUTSHOPEntities db = new HAPINUTSHOPEntities())
+            {
+                // Get page id
+                int id = model.Id;
+
+                // Get the page
+                Page dto = db.Pages.Find(id);
+
+                // DTO the title
+                dto.Title = model.Title;
+
+                // Make sure title are unique
+                if (db.Pages.Where(x => x.Id != id).Any(x => x.Title == model.Title))
+                {
+                    ModelState.AddModelError("", "Tiêu đề đã tồn tại!");
+                    return View(model);
+                }
+
+                // DTO the rest
+                dto.Body = model.Body;
+
+                // Save the DTO
+                db.SaveChanges();
+            }
+
+            // Set TempData message
+            TempData["SM"] = "Chỉnh sửa thành công!";
+
+            // Redirect
+            return RedirectToAction("Index");
+        }
+
+        // GET: Admin/Pages/PageDetails/id
+        public ActionResult PageDetails(int id)
+        {
+            // Declare PageVM
+            PageViewModel model;
+
+            using (HAPINUTSHOPEntities db = new HAPINUTSHOPEntities())
+            {
+                // Get the page
+                Page dto = db.Pages.Find(id);
+
+                // Confirm page exists
+                if (dto == null)
+                {
+                    return Content("The page does not exist.");
+                }
+
+                // Init PageVM
+                model = new PageViewModel(dto);
+            }
+
+            // Return view with model
+            return View(model);
+        }
+
+        // GET: Admin/Pages/DeletePage/id
+        public ActionResult DeletePage(int id)
+        {
+            using (HAPINUTSHOPEntities db = new HAPINUTSHOPEntities())
+            {
+                // Get the page
+                Page dto = db.Pages.Find(id);
+
+                // Remove the page
+                db.Pages.Remove(dto);
+
+                // Save
+                db.SaveChanges();
+            }
+
+            // Redirect
+            return RedirectToAction("Index");
+        }
     }
 }
