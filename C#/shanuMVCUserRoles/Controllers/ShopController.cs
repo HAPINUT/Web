@@ -1,8 +1,11 @@
 ﻿using shanuMVCUserRoles.DTO;
 using shanuMVCUserRoles.Models.Shop;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Web.Mvc;
 
 namespace shanuMVCUserRoles.Controllers
@@ -45,6 +48,17 @@ namespace shanuMVCUserRoles.Controllers
 
             // Return view with model
             return View("ProductDetails", productVM);
+        }
+
+        // GET: Search
+        public ActionResult Search(string keyword)
+        {
+            IEnumerable<ProductViewModel> listProduct;
+            using (HAPINUTSHOPEntities db = new HAPINUTSHOPEntities())
+            {
+                listProduct = db.Products.Where(x => x.Name.ToLower().Contains(keyword.ToLower())).ToArray().Select(p => new ProductViewModel(p)).ToList();
+            }
+            return View("Index", listProduct);
         }
     }
 }
