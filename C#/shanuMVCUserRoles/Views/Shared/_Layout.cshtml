@@ -46,12 +46,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <header>
             <div class="row">
                 <div class="col-md-3 top-info text-left mt-lg-4">
-                    <h6>Liên hệ</h6>
+                    @*<h6>Liên hệ</h6>*@
                     <ul>
-                        <li>
-                            <i class="fas fa-phone"></i> Call
-                        </li>
-                        <li class="number-phone mt-3">0929.602.720
+                        @*<li>
+                            <i class="fas fa-phone"></i> Bỏ logo zô đây
+                        </li>*@
+                        <li class="number-phone mt-3">Bỏ logo zô đây
                     </ul>
                 </div>
                 <div class="col-md-6 logo-w3layouts text-center">
@@ -126,13 +126,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <button type="button" class="overlay-close">
                         <i class="fa fa-times" aria-hidden="true"></i>
                     </button>
-                    <form action="#" method="post" class="d-flex">
+                    @using (Html.BeginForm("Search", "Shop", FormMethod.Get, new { @class = "d-flex" }))
+                    {
+                        <input class="form-control" name="keyword" type="search" placeholder="Search here..." required="">
+                        <button type="submit" class="btn btn-primary submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    }
+                    @*<form action="#" method="post" class="d-flex">
                         <input class="form-control" type="search" placeholder="Search here..." required="">
                         <button type="submit" class="btn btn-primary submit">
                             <i class="fas fa-search"></i>
                         </button>
-                    </form>
-
+                    </form>*@
                 </div>
                 <!-- open/close -->
             </div>
@@ -157,7 +163,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <a class="nav-link" href="about.html">GIỚI THIỆU</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            <a class="nav-link dropdown-toggle" href="Shop" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                                aria-expanded="false">
                                 SẢN PHẨM
                             </a>

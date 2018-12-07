@@ -187,13 +187,13 @@ h1.logo-w3layouts a.navbar-brand {
 	-moz-border-radius-topright: 0;
 	-webkit-border-top-right-radius: 0;
 	border-top-right-radius: 0;
-	width: 80%;
-	margin-top: 0;
+	width: 20%;
 	padding: 0;
 	border-color: #ddd;
 	margin: 0 auto;
-	left: 9%;
+	left: 45%;
 	border-radius: 0;
+    margin-top: -1%;
 }
 
 .nav-mega .dropdown-menu.mega-menu>li {
