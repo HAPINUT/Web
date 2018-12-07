@@ -1,0 +1,9 @@
+﻿@using shanuMVCUserRoles.Models;
+@model IEnumerable<CategoryViewModel>
+
+@foreach (var item in Model)
+{
+    <li>
+        <a href="Shop">@Html.ActionLink(@item.Name, "Index", "Shop", routeValues: null, htmlAttributes: new { id = @item.Id })</a>
+    </li>
+}
