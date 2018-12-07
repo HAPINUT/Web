@@ -1,4 +1,6 @@
-﻿using System;
+﻿using shanuMVCUserRoles.DTO;
+using shanuMVCUserRoles.Models.Shop;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +10,16 @@ namespace shanuMVCUserRoles.Controllers
 {
 	public class HomeController : Controller
 	{
+        private const int limitProduct = 4; 
+
 		public ActionResult Index()
 		{
-			return View();
+            IEnumerable<ProductViewModel> listProduct;
+            using (HAPINUTSHOPEntities db = new HAPINUTSHOPEntities())
+            {
+                listProduct = db.Products.ToArray().OrderByDescending(x => x.Id).Select(p => new ProductViewModel(p)).Take(limitProduct).ToList();
+            }
+            return View(listProduct);
 		}
 
 		public ActionResult About()
