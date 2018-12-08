@@ -23,6 +23,16 @@ namespace shanuMVCUserRoles.Controllers
             return View(listProduct);
         }
 
+        public ActionResult Categories(int id)
+        {
+            IEnumerable<ProductViewModel> listProduct;
+            using (HAPINUTSHOPEntities db = new HAPINUTSHOPEntities())
+            {
+                listProduct = db.Products.Where(x => x.CategoryId == id).ToArray().Select(p => new ProductViewModel(p)).ToList();
+            }
+            return View("Index", listProduct);
+        }
+
         public ActionResult ProductDetails(int id)
         {
             Product dto;

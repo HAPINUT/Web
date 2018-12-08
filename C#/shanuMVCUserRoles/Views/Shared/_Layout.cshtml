@@ -154,7 +154,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-mega mx-auto">
                         <li class="nav-item active">
-                            <a class="nav-link ml-lg-0" href="Home">
+                            <a class="nav-link ml-lg-0" href='@Url.Action("Index","Home")'>
                                 TRANG CHỦ
                                 <span class="sr-only">(current)</span>
                             </a>
@@ -163,8 +163,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <a class="nav-link" href="about.html">GIỚI THIỆU</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="Shop" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false" style="cursor:pointer">
                                 SẢN PHẨM
                             </a>
                             <ul class="dropdown-menu mega-menu ">
@@ -288,6 +288,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </footer>
     <!-- //footer -->
     <!--jQuery-->
+    <script>
+        $("#navbarDropdown").click(function () {
+            window.location.href = "@Url.Action("Index", "Shop")";
+        });
+    </script>
     <!--search jQuery-->
     <script src="~/Content/js/modernizr-2.6.2.min.js"></script>
     <script src="~/Content/js/classie-search.js"></script>
