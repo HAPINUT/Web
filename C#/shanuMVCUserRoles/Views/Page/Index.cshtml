@@ -1,0 +1,99 @@
+﻿@using shanuMVCUserRoles.Models.Pages
+@model IEnumerable<PageViewModel>
+
+<script type="text/javascript">
+   $(document).ready(function () {
+        var page = {
+            id: 5
+        };
+        $.ajax({
+            type: "POST",
+            url: "/Page/GetPage",
+            data: page,
+            dataType: "json",
+            success: function (response) {
+                $("#pageBody").html(response);
+            },
+            failure: function (response) {
+                alert(response.responseText);
+            },
+            error: function (response) {
+                alert(response.responseText);
+            }
+        });
+
+        $(".pageList .img-deal1 h3").click(function () {
+            var id = $(this).attr("data-id");
+            var page = {
+                id: id
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "/Page/GetPage",
+                data: page,
+                dataType: "json",
+                success: function (response) {
+                    $("#pageBody").html(response);
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        });
+    });
+</script>
+
+<div class="banner_inner">
+    <div class="services-breadcrumb">
+        <div class="inner_breadcrumb">
+            <ul class="short">
+                <li>
+                    @Html.ActionLink("TRANG CHỦ", "Index", "Home")
+                    <i>|</i>
+                </li>
+                <li> BLOG </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<section class="banner-bottom-wthreelayouts py-lg-5 py-3">
+    <div class="container-fluid">
+        <div class="inner-sec-shop px-lg-4 px-3">
+            <div class="row">
+                <!-- product left -->
+                <div class="side-bar col-lg-3">
+                    <!-- deals -->
+                    <div class="deal-leftmk left-side" >
+                        <h3 class="agileits-sear-head">Special Deals</h3>
+                        @foreach (var item in Model)
+                        {
+                            <div class="pageList special-sec1">
+                                <div class="img-deals">
+                                    <img src="images/s1.jpg" alt="">
+                                </div>
+                                <div class="img-deal1">
+                                    <h3 style="cursor:pointer" data-id="@item.Id">@item.Title</h3>
+                                    <p>Nội dung chi tiết...</p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        }
+                    </div>
+                    <!-- //deals -->
+                </div>
+                <!-- //product left -->
+                <!--/product right-->
+                <div class="left-ads-display col-lg-9">
+                    <div class="wrapper_top_shop">
+                        <div id="pageBody"></div>
+                    </div>
+                </div>
+                <!--//product right-->
+            </div>
+        </div>
+    </div>
+</section>

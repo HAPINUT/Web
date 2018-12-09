@@ -10,9 +10,11 @@ namespace shanuMVCUserRoles.Models
         {
             Id = category.Id;
             Name = category.Name;
+            Meta_Title = category.Meta_Title;
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Meta_Title { get; set; }
     }
 }
