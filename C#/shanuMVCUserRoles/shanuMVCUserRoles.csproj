@@ -1229,6 +1229,7 @@
     <Content Include="Views\Shop\ProductDetails.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Shared\_CategoriesPartial.cshtml" />
+    <Content Include="Views\Page\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1236,7 +1237,6 @@
     <Folder Include="Areas\Admin\Views\User\" />
     <Folder Include="Images\Products\3\Gallery\" />
     <Folder Include="Views\Navigation\" />
-    <Folder Include="Views\Page\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -1270,7 +1270,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>5580</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

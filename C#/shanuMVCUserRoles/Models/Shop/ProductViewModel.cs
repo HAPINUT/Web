@@ -15,6 +15,7 @@ namespace shanuMVCUserRoles.Models.Shop
         {
             Id = product.Id;
             Name = product.Name;
+            Meta_Title = product.Meta_Title;
             Decription = product.Decription;
             Price = product.Price;
             CategoryName = product.CategoryName;
@@ -24,6 +25,7 @@ namespace shanuMVCUserRoles.Models.Shop
 
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Meta_Title { get; set; }
         public string Decription { get; set; }
         public decimal Price { get; set; }
         public string CategoryName { get; set; }
