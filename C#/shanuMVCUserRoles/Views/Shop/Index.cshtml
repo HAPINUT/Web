@@ -4,21 +4,27 @@
 <div class="banner_inner">
     <div class="services-breadcrumb">
         <div class="inner_breadcrumb">
-
             <ul class="short">
                 <li>
                     @Html.ActionLink("TRANG CHỦ", "Index", "Home")
                     <i>|</i>
-                </li >
+                </li>
                 <li> DANH DÁCH SẢN PHẨM </li>
-            </ul >
-        </div >
-    </div >
+                @if (!string.IsNullOrEmpty(ViewBag.CategoryName))
+                {
+                    <li>
+                        <i>|</i>
+                        @ViewBag.CategoryName
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
 </div>
 <section class="banner-bottom-wthreelayouts py-lg-5 py-3">
     <div class="container-fluid">
         <div class="inner-sec-shop px-lg-4 px-3">
-            <h3 class="tittle-w3layouts my-lg-4 mt-3">New Arrivals for you</h3>
+            @*<h3 class="tittle-w3layouts my-lg-4 mt-3">New Arrivals for you</h3>*@
             <div class="row">
                 <div class="left-ads-display col-lg-12">
                     <div class="wrapper_top_shop">
@@ -49,12 +55,11 @@
                                                 <span class="product-new-top">New</span>
                                             </div>
                                             <div class="item-info-product">
-
                                                 <div class="info-product-price">
                                                     <div class="grid_meta">
                                                         <div class="product_price">
                                                             <h4>
-                                                                <a href="single.html">@item.Name </a>
+                                                                @Html.ActionLink(@item.Name, "ProductDetails", "Shop", new { id = @item.Id }, new { })
                                                             </h4>
                                                             <div class="grid-price mt-2">
                                                                 <span class="money ">@item.Price VND</span>

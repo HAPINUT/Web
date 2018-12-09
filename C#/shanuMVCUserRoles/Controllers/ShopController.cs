@@ -19,6 +19,8 @@ namespace shanuMVCUserRoles.Controllers
             using (HAPINUTSHOPEntities db = new HAPINUTSHOPEntities())
             {
                 listProduct = db.Products.ToArray().Select(p => new ProductViewModel(p)).ToList();
+
+                ViewBag.CategoryName = string.Empty;
             }
             return View(listProduct);
         }
@@ -29,7 +31,10 @@ namespace shanuMVCUserRoles.Controllers
             using (HAPINUTSHOPEntities db = new HAPINUTSHOPEntities())
             {
                 listProduct = db.Products.Where(x => x.CategoryId == id).ToArray().Select(p => new ProductViewModel(p)).ToList();
+
+                ViewBag.CategoryName = listProduct.SingleOrDefault().CategoryName;
             }
+
             return View("Index", listProduct);
         }
 
@@ -51,10 +56,18 @@ namespace shanuMVCUserRoles.Controllers
                 productVM = new ProductViewModel(dto);
             }
 
-
             // Get gallery images
-            //productVM.GalleryImages = Directory.EnumerateFiles(Server.MapPath("~/Images/Products/" + id + "/Gallery/Thumbs"))
-            //                                    .Select(fn => Path.GetFileName(fn));
+            productVM.GalleryImages = Directory.EnumerateFiles(Server.MapPath("~/Images/Products/" + id + "/Gallery"))
+                                                .Select(fn => Path.GetFileName(fn));
+
+            #region Get danh sách sản phẩm liên quan
+            IEnumerable<ProductViewModel> listProduct;
+            using (HAPINUTSHOPEntities db = new HAPINUTSHOPEntities())
+            {
+                listProduct = db.Products.Where(x => x.CategoryId == productVM.CategoryId && x.Id != productVM.Id).ToArray().Select(p => new ProductViewModel(p)).ToList();
+            }
+            ViewBag.ListProduct = listProduct;
+            #endregion
 
             // Return view with model
             return View("ProductDetails", productVM);
