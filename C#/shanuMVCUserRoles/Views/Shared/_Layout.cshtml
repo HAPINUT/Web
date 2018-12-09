@@ -46,12 +46,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <header>
             <div class="row">
                 <div class="col-md-3 top-info text-left mt-lg-4">
-                    @*<h6>Liên hệ</h6>*@
+                    <h6>Bỏ logo zô đây</h6>
                     <ul>
-                        @*<li>
-                            <i class="fas fa-phone"></i> Bỏ logo zô đây
-                        </li>*@
-                        <li class="number-phone mt-3">Bỏ logo zô đây
+                        <li>
+                            <i class="fas fa-phone"></i>
+                        </li>
+                        <li class="number-phone mt-3">0929 602 720
                     </ul>
                 </div>
                 <div class="col-md-6 logo-w3layouts text-center">
@@ -154,13 +154,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-mega mx-auto">
                         <li class="nav-item active">
-                            <a class="nav-link ml-lg-0" href='@Url.Action("Index","Home")'>
+                            <a class="nav-link ml-lg-0" href='@Url.Action("Index", "Home")'>
                                 TRANG CHỦ
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">GIỚI THIỆU</a>
+                            @Html.ActionLink("GIỚI THIỆU", "About", "Home", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -172,10 +172,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">BLOG</a>
+                            @Html.ActionLink("BLOG", "About", "Home", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">LIÊN HỆ</a>
+                            @Html.ActionLink("LIÊN HỆ", "Contact", "Home", null, new { @class = "nav-link" })
                         </li>
                     </ul>
 
@@ -254,19 +254,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     <ul class="links">
                         <li>
-                            <a href="index.html">Trang Chủ</a>
+                            @Html.ActionLink("Trang Chủ", "Index", "Home")
                         </li>
                         <li>
-                            <a href="about.html">Giới Thiệu</a>
+                            @Html.ActionLink("Giới Thiệu", "About", "Home")
                         </li>
                         <li>
-                            <a href="404.html">Blog</a>
+                            @Html.ActionLink("Blog", "Index", "Page")
                         </li>
                         <li>
-                            <a href="shop.html">Sản Phẩm</a>
+                            @Html.ActionLink("Sản Phẩm", "Index", "Shop")
                         </li>
                         <li>
-                            <a href="contact.html">Liên Hệ</a>
+                            @Html.ActionLink("Liên Hệ", "Contact", "Home")
                         </li>
                     </ul>
                 </div>

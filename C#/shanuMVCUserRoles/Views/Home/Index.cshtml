@@ -75,7 +75,7 @@
                                     <img src="~/Images/Products/@item.Id/Thumbs/@item.Image" class="img-fluid" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
-                                            <a href="single.html" class="link-product-add-cart">Xem chi tiết</a>
+                                            @Html.ActionLink("Xem chi tiết", "ProductDetails", "Shop", new { id = @item.Id }, new { @class = "link-product-add-cart" })
                                         </div>
                                     </div>
                                     <span class="product-new-top">Mới</span>
@@ -85,7 +85,7 @@
                                         <div class="grid_meta">
                                             <div class="product_price">
                                                 <h4>
-                                                    <a href="single.html">@item.Name</a>
+                                                    @Html.ActionLink(@item.Name, "ProductDetails", "Shop", new { id = @item.Id }, new { })
                                                 </h4>
                                                 <div class="grid-price mt-2">
                                                     <span class="money ">@item.Price VND</span>

@@ -1,14 +1,23 @@
-﻿<!-- banner -->
+﻿@model shanuMVCUserRoles.Models.Shop.ProductViewModel
+
+<!-- banner -->
 <div class="banner_inner">
     <div class="services-breadcrumb">
         <div class="inner_breadcrumb">
-
             <ul class="short">
                 <li>
-                    <a href="index.html">Home</a>
+                    @Html.ActionLink("TRANG CHỦ", "Index", "Home")
                     <i>|</i>
                 </li>
-                <li>Single Page</li>
+                <li> CHI TIẾT SẢN PHẨM </li>
+                <li>
+                    <i>|</i>
+                    @Model.CategoryName
+                </li>
+                <li>
+                    <i>|</i>
+                    @Model.Name
+                </li>
             </ul>
         </div>
     </div>
@@ -24,7 +33,13 @@
                     <div class="grid images_3_of_2">
                         <div class="flexslider1">
                             <ul class="slides">
-                                <li data-thumb="../../Content/images/d2.jpg">
+                                @foreach (var item in Model.GalleryImages)
+                                {
+                                    <li data-thumb="../../Images/Products/@Model.Id/Gallery/@item">
+                                        <div class="thumb-image"> <img src="../../Images/Products/@Model.Id/Thumbs/@item" data-imagezoom="true" class="img-fluid" alt=""> </div>
+                                    </li>
+                                }
+                                @*<li data-thumb="../../Content/images/d2.jpg">
                                     <div class="thumb-image"> <img src="../../Content/images/d2.jpg" data-imagezoom="true" class="img-fluid" alt=""> </div>
                                 </li>
                                 <li data-thumb="../../Content/images/d1.jpg">
@@ -32,16 +47,16 @@
                                 </li>
                                 <li data-thumb="../../Content/images/d3.jpg">
                                     <div class="thumb-image"> <img src="../../Content/images/d3.jpg" data-imagezoom="true" class="img-fluid" alt=""> </div>
-                                </li>
+                                </li>*@
                             </ul>
                             <div class="clearfix"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-8 single-right-left simpleCart_shelfItem">
-                    <h3>Irayz Butterfly Sunglasses  (Black)</h3>
+                    <h3>@Model.Name</h3>
                     <p>
-                        <span class="item_price">$650</span>
+                        <span class="item_price">@Model.Price VND</span>
                         <del>$1,199</del>
                     </p>
                     <div class="rating1">
@@ -53,13 +68,13 @@
                             <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
-                    <div class="description">
+                    @*<div class="description">
                         <h5>Check delivery, payment options and charges at your location</h5>
                         <form action="#" method="post">
                             <input class="form-control" type="text" name="Email" placeholder="Please enter..." required="">
                             <input type="submit" value="Check">
                         </form>
-                    </div>
+                    </div>*@
                     <div class="color-quality">
                         <div class="color-quality-right">
                             <h5>Quality :</h5>
@@ -71,7 +86,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="occasional">
+                    @*<div class="occasional">
                         <h5>Types :</h5>
                         <div class="colr ert">
                             <label class="radio"><input type="radio" name="radio" checked=""><i></i> Irayz Butterfly(Black)</label>
@@ -83,7 +98,7 @@
                             <label class="radio"><input type="radio" name="radio"><i></i> Irayz Butterfly (white)</label>
                         </div>
                         <div class="clearfix"> </div>
-                    </div>
+                    </div>*@
                     <div class="occasion-cart">
                         <div class="googles single-item singlepage">
                             <form action="#" method="post">
@@ -144,7 +159,8 @@
                             <div class="tab1">
 
                                 <div class="single_page">
-                                    <h6>Lorem ipsum dolor sit amet</h6>
+                                    @Model.Decription
+                                    @*<h6>Lorem ipsum dolor sit amet</h6>
                                     <p>
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie
                                         blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt
@@ -156,7 +172,7 @@
                                         blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt
                                         ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore
                                         magna aliqua.
-                                    </p>
+                                    </p>*@
                                 </div>
                             </div>
                             <!--//tab_one-->
@@ -224,84 +240,87 @@
         <!--/slide-->
         <div class="slider-img mid-sec mt-lg-5 mt-2 px-lg-5 px-3">
             <!--//banner-sec-->
-            <h3 class="tittle-w3layouts text-left my-lg-4 my-3">Featured Products</h3>
+            <h3 class="tittle-w3layouts text-left my-lg-4 my-3">Sản Phẩm Liên Quan</h3>
             <div class="mid-slider">
                 <div class="owl-carousel owl-theme row">
-                    <div class="item">
-                        <div class="gd-box-info text-center">
-                            <div class="product-men women_two bot-gd">
-                                <div class="product-googles-info slide-img googles">
-                                    <div class="men-pro-item">
-                                        <div class="men-thumb-item">
-                                            <img src="~/Content/images/s5.jpg" class="img-fluid" alt="">
-                                            <div class="men-cart-pro">
-                                                <div class="inner-men-cart-pro">
-                                                    <a href="single.html" class="link-product-add-cart">Quick View</a>
-                                                </div>
-                                            </div>
-                                            <span class="product-new-top">New</span>
-                                        </div>
-                                        <div class="item-info-product">
-
-                                            <div class="info-product-price">
-                                                <div class="grid_meta">
-                                                    <div class="product_price">
-                                                        <h4>
-                                                            <a href="single.html">Fastrack Aviator </a>
-                                                        </h4>
-                                                        <div class="grid-price mt-2">
-                                                            <span class="money ">$325.00</span>
-                                                        </div>
+                    @foreach (var item in ViewBag.ListProduct)
+                    {
+                        <div class="item">
+                            <div class="gd-box-info text-center">
+                                <div class="product-men women_two bot-gd">
+                                    <div class="product-googles-info slide-img googles">
+                                        <div class="men-pro-item">
+                                            <div class="men-thumb-item">
+                                                <img src="~/Images/Products/@item.Id/Thumbs/@item.Image" class="img-fluid" alt="">
+                                                <div class="men-cart-pro">
+                                                    <div class="inner-men-cart-pro">
+                                                        @Html.ActionLink("Xem chi tiết", "ProductDetails", "Shop", new { id = @item.Id }, new { @class = "link-product-add-cart" })
                                                     </div>
-                                                    <ul class="stars">
-                                                        <li>
-                                                            <a href="#">
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">
-                                                                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">
-                                                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
                                                 </div>
-                                                <div class="googles single-item hvr-outline-out">
-                                                    <form action="#" method="post">
-                                                        <input type="hidden" name="cmd" value="_cart">
-                                                        <input type="hidden" name="add" value="1">
-                                                        <input type="hidden" name="googles_item" value="Fastrack Aviator">
-                                                        <input type="hidden" name="amount" value="325.00">
-                                                        <button type="submit" class="googles-cart pgoogles-cart">
-                                                            <i class="fas fa-cart-plus"></i>
-                                                        </button>
-                                                    </form>
-
-                                                </div>
+                                                <span class="product-new-top">New</span>
                                             </div>
+                                            <div class="item-info-product">
 
+                                                <div class="info-product-price">
+                                                    <div class="grid_meta">
+                                                        <div class="product_price">
+                                                            <h4>
+                                                                <a href="single.html">Fastrack Aviator </a>
+                                                            </h4>
+                                                            <div class="grid-price mt-2">
+                                                                <span class="money ">$325.00</span>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="stars">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="googles single-item hvr-outline-out">
+                                                        <form action="#" method="post">
+                                                            <input type="hidden" name="cmd" value="_cart">
+                                                            <input type="hidden" name="add" value="1">
+                                                            <input type="hidden" name="googles_item" value="Fastrack Aviator">
+                                                            <input type="hidden" name="amount" value="325.00">
+                                                            <button type="submit" class="googles-cart pgoogles-cart">
+                                                                <i class="fas fa-cart-plus"></i>
+                                                            </button>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="item">
+                    }
+                    @*<div class="item">
                         <div class="gd-box-info text-center">
                             <div class="product-men women_two bot-gd">
                                 <div class="product-googles-info slide-img googles">
@@ -672,7 +691,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>*@
                 </div>
             </div>
         </div>
