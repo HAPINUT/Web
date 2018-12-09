@@ -48,7 +48,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="HasSidebar">Category</label>
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.CategoryId, Model.Categories, "Select Category", new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.CategoryId, Model.Categories, "Chọn danh mục sản phẩm", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
             </div>
         </div>

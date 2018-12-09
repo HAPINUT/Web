@@ -1,4 +1,5 @@
 ﻿using shanuMVCUserRoles.DTO;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
@@ -27,5 +28,6 @@ namespace shanuMVCUserRoles.Models.Pages
         [StringLength(int.MaxValue, MinimumLength = 3)]
         [AllowHtml]
         public string Body { get; set; }
+        public IEnumerable<SelectListItem> topics { get; set; }
     }
 }

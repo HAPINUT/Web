@@ -37,7 +37,5 @@ namespace shanuMVCUserRoles.DTO
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Topic> Topics { get; set; }
-
-        public System.Data.Entity.DbSet<shanuMVCUserRoles.Models.CategoryViewModel> CategoryViewModels { get; set; }
     }
 }

@@ -36,8 +36,13 @@ namespace shanuMVCUserRoles.Areas.Admin.Controllers
         // GET: Admin/Pages/AddPage
         [HttpGet]
         public ActionResult AddPage()
-        {
-            return View();
+        { 
+            PageViewModel model = new PageViewModel();
+            using (HAPINUTSHOPEntities db = new HAPINUTSHOPEntities())
+            {
+                model.topics = new SelectList(db.Topics.ToList(), "Id", "Name");
+            }
+            return View(model);
         }
 
         // POST: Admin/Pages/AddPage
