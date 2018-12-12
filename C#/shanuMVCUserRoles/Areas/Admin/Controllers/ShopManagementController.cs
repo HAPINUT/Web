@@ -215,9 +215,9 @@ namespace shanuMVCUserRoles.Areas.Admin.Controllers
 
             var pathString1 = Path.Combine(originalDirectory.ToString(), "Products");
             var pathString2 = Path.Combine(originalDirectory.ToString(), "Products\\" + id.ToString());
-            var pathString3 = Path.Combine(originalDirectory.ToString(), "Products\\" + id.ToString() + "\\Thumbs");
-            var pathString4 = Path.Combine(originalDirectory.ToString(), "Products\\" + id.ToString() + "\\Gallery");
-            var pathString5 = Path.Combine(originalDirectory.ToString(), "Products\\" + id.ToString() + "\\Gallery\\Thumbs");
+            var pathString3 = Path.Combine(originalDirectory.ToString(), "Products\\" + id.ToString() + "\\Gallery");
+            //var pathString4 = Path.Combine(originalDirectory.ToString(), "Products\\" + id.ToString() + "\\Gallery");
+            //var pathString5 = Path.Combine(originalDirectory.ToString(), "Products\\" + id.ToString() + "\\Gallery\\Thumbs");
 
             if (!Directory.Exists(pathString1))
                 Directory.CreateDirectory(pathString1);
@@ -228,11 +228,11 @@ namespace shanuMVCUserRoles.Areas.Admin.Controllers
             if (!Directory.Exists(pathString3))
                 Directory.CreateDirectory(pathString3);
 
-            if (!Directory.Exists(pathString4))
-                Directory.CreateDirectory(pathString4);
+            //if (!Directory.Exists(pathString4))
+            //    Directory.CreateDirectory(pathString4);
 
-            if (!Directory.Exists(pathString5))
-                Directory.CreateDirectory(pathString5);
+            //if (!Directory.Exists(pathString5))
+            //    Directory.CreateDirectory(pathString5);
 
             // Check if a file was uploaded
             if (file != null && file.ContentLength > 0)
@@ -273,11 +273,12 @@ namespace shanuMVCUserRoles.Areas.Admin.Controllers
                 var path2 = string.Format("{0}\\{1}", pathString3, imageName);
 
                 // Save original
-                file.SaveAs(path);
+                //file.SaveAs(path);
 
                 // Create and save thumb
                 WebImage img = new WebImage(file.InputStream);
                 img.Resize(200, 200);
+                img.Save(path);
                 img.Save(path2);
             }
 
@@ -344,7 +345,7 @@ namespace shanuMVCUserRoles.Areas.Admin.Controllers
                 model.Categories = new SelectList(db.Categories.ToList(), "Id", "Name");
 
                 // Get all gallery images
-                model.GalleryImages = Directory.EnumerateFiles(Server.MapPath("~/Images/Products/" + id + "/Gallery/Thumbs"))
+                model.GalleryImages = Directory.EnumerateFiles(Server.MapPath("~/Images/Products/" + id + "/Gallery"))
                                                 .Select(fn => Path.GetFileName(fn));
             }
 
@@ -364,7 +365,7 @@ namespace shanuMVCUserRoles.Areas.Admin.Controllers
             {
                 model.Categories = new SelectList(db.Categories.ToList(), "Id", "Name");
             }
-            model.GalleryImages = Directory.EnumerateFiles(Server.MapPath("~/Images/Products/" + id + "/Gallery/Thumbs"))
+            model.GalleryImages = Directory.EnumerateFiles(Server.MapPath("~/Images/Products/" + id + "/Gallery"))
                                                 .Select(fn => Path.GetFileName(fn));
 
             // Check model state
@@ -430,16 +431,16 @@ namespace shanuMVCUserRoles.Areas.Admin.Controllers
                 // Set uplpad directory paths
                 var originalDirectory = new DirectoryInfo(string.Format("{0}Images", Server.MapPath(@"\")));
 
-                var pathString1 = Path.Combine(originalDirectory.ToString(), "Products\\" + id.ToString());
-                var pathString2 = Path.Combine(originalDirectory.ToString(), "Products\\" + id.ToString() + "\\Thumbs");
+                //var pathString1 = Path.Combine(originalDirectory.ToString(), "Products\\" + id.ToString());
+                var pathString2 = Path.Combine(originalDirectory.ToString(), "Products\\" + id.ToString() + "\\Gallery");
 
                 // Delete files from directories
 
-                DirectoryInfo di1 = new DirectoryInfo(pathString1);
+                //DirectoryInfo di1 = new DirectoryInfo(pathString1);
                 DirectoryInfo di2 = new DirectoryInfo(pathString2);
 
-                foreach (FileInfo file2 in di1.GetFiles())
-                    file2.Delete();
+                //foreach (FileInfo file2 in di1.GetFiles())
+                //    file2.Delete();
 
                 foreach (FileInfo file3 in di2.GetFiles())
                     file3.Delete();
@@ -458,10 +459,10 @@ namespace shanuMVCUserRoles.Areas.Admin.Controllers
 
                 // Save original and thumb images
 
-                var path = string.Format("{0}\\{1}", pathString1, imageName);
+                //var path = string.Format("{0}\\{1}", pathString1, imageName);
                 var path2 = string.Format("{0}\\{1}", pathString2, imageName);
 
-                file.SaveAs(path);
+                //file.SaveAs(path);
 
                 WebImage img = new WebImage(file.InputStream);
                 img.Resize(200, 200);
@@ -513,16 +514,18 @@ namespace shanuMVCUserRoles.Areas.Admin.Controllers
                     // Set directory paths
                     var originalDirectory = new DirectoryInfo(string.Format("{0}Images", Server.MapPath(@"\")));
 
-                    string pathString1 = Path.Combine(originalDirectory.ToString(), "Products\\" + id.ToString() + "\\Gallery");
-                    string pathString2 = Path.Combine(originalDirectory.ToString(), "Products\\" + id.ToString() + "\\Gallery\\Thumbs");
+                    //string pathString1 = Path.Combine(originalDirectory.ToString(), "Products\\" + id.ToString());
+                    string pathString2 = Path.Combine(originalDirectory.ToString(), "Products\\" + id.ToString() + "\\Gallery");
+
+                    //string pathString2 = Path.Combine(originalDirectory.ToString(), "Products\\" + id.ToString() + "\\Gallery\\Thumbs");
 
                     // Set image paths
-                    var path = string.Format("{0}\\{1}", pathString1, file.FileName);
+                    //var path = string.Format("{0}\\{1}", pathString1, file.FileName);
                     var path2 = string.Format("{0}\\{1}", pathString2, file.FileName);
 
                     // Save original and thumb
 
-                    file.SaveAs(path);
+                    //file.SaveAs(path);
                     WebImage img = new WebImage(file.InputStream);
                     img.Resize(200, 200);
                     img.Save(path2);
@@ -537,13 +540,13 @@ namespace shanuMVCUserRoles.Areas.Admin.Controllers
         public void DeleteImage(int id, string imageName)
         {
             string fullPath1 = Request.MapPath("~/Images/Products/" + id.ToString() + "/Gallery/" + imageName);
-            string fullPath2 = Request.MapPath("~/Images/Products/" + id.ToString() + "/Gallery/Thumbs/" + imageName);
+            //string fullPath2 = Request.MapPath("~/Images/Products/" + id.ToString() + "/Gallery/Thumbs/" + imageName);
 
             if (System.IO.File.Exists(fullPath1))
                 System.IO.File.Delete(fullPath1);
 
-            if (System.IO.File.Exists(fullPath2))
-                System.IO.File.Delete(fullPath2);
+            //if (System.IO.File.Exists(fullPath2))
+            //    System.IO.File.Delete(fullPath2);
         }
 
     }

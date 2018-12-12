@@ -46,7 +46,7 @@
                                     <div class="product-googles-info googles">
                                         <div class="men-pro-item">
                                             <div class="men-thumb-item">
-                                                <img src = "~/Images/Products/@item.Id/Thumbs/@item.Image" class="img-fluid" alt="">
+                                                <img src = "../../Images/Products/@item.Id/@item.Image" class="img-fluid" alt="">
                                                 <div class="men-cart-pro">
                                                     <div class="inner-men-cart-pro">
                                                         @Html.ActionLink("Xem chi tiết", "ProductDetails", "Shop", new { id = @item.Id}, new { @class = "link-product-add-cart" })
@@ -97,8 +97,8 @@
                                                         <form action="#" method="post">
                                                             <input type="hidden" name="cmd" value="_cart">
                                                             <input type="hidden" name="add" value="1">
-                                                            <input type="hidden" name="googles_item" value="Aislin Wayfarer">
-                                                            <input type="hidden" name="amount" value="775.00">
+                                                            <input type="hidden" name="googles_item" value="@item.Name">
+                                                            <input type="hidden" name="amount" value="@item.Price">
                                                             <button type="submit" class="googles-cart pgoogles-cart">
                                                                 <i class="fas fa-cart-plus"></i>
                                                             </button>

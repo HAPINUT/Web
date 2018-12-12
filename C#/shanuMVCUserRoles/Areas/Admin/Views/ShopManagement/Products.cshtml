@@ -13,6 +13,13 @@
 
 <h2>@ViewBag.Title</h2>
 
+@if (TempData["SM"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SM"]
+    </div>
+}
+
 <select id="SelectCategory" name="SelectCategory">
     <option value="0">Tất cả</option>
     @foreach (var item in ViewBag.Categories)
@@ -64,7 +71,7 @@
             </td>
             <td>
                 <a href="/admin/shopmanagement/EditProduct/@product.Id">
-                    <img src="/Images/Products/@product.Id/Thumbs/@product.Image" width="100" height="100"/>
+                    <img src="~/Images/Products/@product.Id/@product.Image" width="100" height="100" />
                 </a>
             </td>
             <td>

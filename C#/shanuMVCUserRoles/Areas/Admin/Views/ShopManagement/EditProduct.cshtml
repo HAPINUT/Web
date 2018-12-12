@@ -16,12 +16,6 @@
     }
 </style>
 
-@if (TempData["SM"] != null)
-{
-    <div class="alert alert-success">
-        @TempData["SM"]
-    </div>
-}
 
 @using (Html.BeginForm("EditProduct", "ShopManagement", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -65,10 +59,17 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2" for="HasSidebar">Image Name</label>
-            @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <img src="/Images/Products/@Model.Id/Thumbs/@Model.Image" />
+                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="HasSidebar">Hình ảnh</label>
+            <div class="col-md-10">
+                <img src="/Images/Products/@Model.Id/@Model.Image" width="200" height="250" />
                 <br /><br />
                 <img id="imgpreview" src="#" />
                 <br /><br />
@@ -111,7 +112,7 @@
 @foreach (var image in Model.GalleryImages)
 {
     <div style="display: inline-block;margin-right: 15px;">
-        <img src="/Images/Products/@Model.Id/Gallery/Thumbs/@image" width="200" height="250" />
+        <img src="/Images/Products/@Model.Id/Gallery/@image" width="200" height="250" />
         @Html.ActionLink("delete", "DeleteImage", "ShopManagement", new { @class = "deleteimage", data_name = image })
     </div>
 }
