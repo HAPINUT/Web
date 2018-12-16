@@ -20,11 +20,12 @@ namespace shanuMVCUserRoles
             {
                 Host = "smtp.gmail.com",
                 Port = 587,
-                Credentials = new NetworkCredential("duchieu242@gmail.com", "Hamham2910966"),
+                Credentials = new NetworkCredential("tonybiin242@gmail.com", "Hamham291096"),
                 EnableSsl = true,
+                UseDefaultCredentials = false
             };
 
-            var @from = new MailAddress("duchieu242@gmail.com", "Dầu Lạc Xứ Quảng");
+            var @from = new MailAddress("tonybiin242@gmail.com", "Dầu Lạc Xứ Quảng");
             var to = new MailAddress(message.Destination);
 
             var mail = new MailMessage(@from, to)

@@ -519,6 +519,7 @@
     <Content Include="Areas\Admin\Views\ShopManagement\EditProduct.cshtml" />
     <Content Include="Areas\Admin\Views\PageManagement\EditPage.cshtml" />
     <Content Include="Areas\Admin\Views\PageManagement\PageDetails.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Index.cshtml" />
     <None Include="Connected Services\ASPSMSX2\configuration91.svcinfo" />
     <None Include="Connected Services\ASPSMSX2\configuration.svcinfo" />
     <None Include="Connected Services\ASPSMSX2\Reference.svcmap">
@@ -1234,7 +1235,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\User\" />
     <Folder Include="Images\Products\3\Gallery\" />
     <Folder Include="Views\Navigation\" />
   </ItemGroup>

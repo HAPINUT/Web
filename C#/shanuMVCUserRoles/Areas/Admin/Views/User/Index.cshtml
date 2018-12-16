@@ -1,0 +1,74 @@
+﻿@model IEnumerable<shanuMVCUserRoles.DTO.AspNetUser>
+@{
+    /**/
+
+    /**/
+
+    ViewBag.Title = "Danh Sách Người Dùng";
+}
+
+@using PagedList.Mvc;
+@using PagedList;
+
+<h2>@ViewBag.Title</h2>
+
+@if (TempData["SM"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SM"]
+    </div>
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr style="background-color:slategray; color: white">
+        <th>
+            Tên người dùng
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Xác nhận Email
+        </th>
+        <th>
+            Số điện thoại
+        </th>
+        <th>
+            Xác nhận SDT
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailConfirmed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumberConfirmed)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager((IPagedList)ViewBag.OnePageOfProducts, page => Url.Action("Products", new { page}))

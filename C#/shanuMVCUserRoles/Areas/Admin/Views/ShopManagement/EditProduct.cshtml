@@ -35,14 +35,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Decription, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextAreaFor(model => model.Decription, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Decription, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
@@ -59,12 +51,21 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.Decription, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Decription, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Decription, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
             </div>
         </div>
+
 
         <div class="form-group">
             <label class="control-label col-md-2" for="HasSidebar">Hình ảnh</label>
@@ -195,6 +196,20 @@ $(function () {
 
 });
 
+    </script>
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+
+    <script>
+        CKEDITOR.replace("Decription", {
+            filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+            filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',
+            filebrowserFlashBrowseUrl: '/ckfinder/ckfinder.html?type=Flash',
+            filebrowserUploadUrl:
+                '/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Files&currentFolder=/archive/',
+            filebrowserImageUploadUrl:
+                '/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Images&currentFolder=/cars/',
+            filebrowserFlashUploadUrl: '/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Flash'
+        });
     </script>
 
 }
