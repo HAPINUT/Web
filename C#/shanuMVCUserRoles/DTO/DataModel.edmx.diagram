@@ -14,19 +14,19 @@
         <EntityTypeShape EntityType="HAPINUTSHOPModel.Order" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="HAPINUTSHOPModel.OrderDetail" Width="1.5" PointX="7.5" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="HAPINUTSHOPModel.Page" Width="1.5" PointX="10" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="HAPINUTSHOPModel.Product" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
         <EntityTypeShape EntityType="HAPINUTSHOPModel.sysdiagram" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HAPINUTSHOPModel.Topic" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
         <AssociationConnector Association="HAPINUTSHOPModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="HAPINUTSHOPModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="HAPINUTSHOPModel.FK_Order_AspNetUsers" ManuallyRouted="false" />
         <AssociationConnector Association="HAPINUTSHOPModel.FK_OrderDetails_AspNetUsers" ManuallyRouted="false" />
-        <AssociationConnector Association="HAPINUTSHOPModel.FK_Product_Category" ManuallyRouted="false" />
         <AssociationConnector Association="HAPINUTSHOPModel.FK_Order_Order" ManuallyRouted="false" />
         <AssociationConnector Association="HAPINUTSHOPModel.FK_OrderDetails_Order" ManuallyRouted="false" />
-        <AssociationConnector Association="HAPINUTSHOPModel.FK_OrderDetails_Product" ManuallyRouted="false" />
         <AssociationConnector Association="HAPINUTSHOPModel.FK_Page_Topic" ManuallyRouted="false" />
         <AssociationConnector Association="HAPINUTSHOPModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="HAPINUTSHOPModel.Product" Width="1.5" PointX="5.25" PointY="11.625" />
+        <AssociationConnector Association="HAPINUTSHOPModel.FK_Product_Category" />
+        <AssociationConnector Association="HAPINUTSHOPModel.FK_OrderDetails_Product" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -7,7 +7,7 @@ using PagedList;
 
 namespace shanuMVCUserRoles.Areas.Admin.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class PageManagementController : Controller
     {
         // GET: Admin/Page

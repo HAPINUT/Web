@@ -26,6 +26,9 @@ namespace shanuMVCUserRoles.Models.Shop
         public int Id { get; set; }
         public string Name { get; set; }
         public string Meta_Title { get; set; }
+
+        [StringLength(int.MaxValue, MinimumLength = 3)]
+        [AllowHtml]
         public string Decription { get; set; }
         public decimal Price { get; set; }
         public string CategoryName { get; set; }
