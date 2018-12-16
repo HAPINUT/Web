@@ -1,4 +1,5 @@
 ﻿using shanuMVCUserRoles.DTO;
+using shanuMVCUserRoles.Models.Pages;
 using shanuMVCUserRoles.Models.Shop;
 using System;
 using System.Collections.Generic;
@@ -24,12 +25,28 @@ namespace shanuMVCUserRoles.Controllers
 
 		public ActionResult About()
 		{
-			ViewBag.Message = "Your application description page.";
+            using (HAPINUTSHOPEntities db = new HAPINUTSHOPEntities())
+            {
+                var page = db.Pages.FirstOrDefault(x => x.TopicId == 2);
+                PageViewModel model = new PageViewModel(page);
+                return View(model);
+            }
+            
+        }
 
-			return View();
-		}
+        [HttpPost]
+        public JsonResult GetPage()
+        {
+            var page = new Page();
+            using (HAPINUTSHOPEntities db = new HAPINUTSHOPEntities())
+            {
+                page = db.Pages.Where(x => x.TopicId == 2).SingleOrDefault();
+            }
 
-		public ActionResult Contact()
+            return Json(page.Body, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult Contact()
 		{
 			ViewBag.Message = "Your contact page.";
 
