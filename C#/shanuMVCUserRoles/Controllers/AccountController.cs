@@ -80,7 +80,7 @@ namespace shanuMVCUserRoles.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToLocal("/home/index");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -158,7 +158,7 @@ namespace shanuMVCUserRoles.Controllers
 				var result = await UserManager.CreateAsync(user, model.Password);
 				if (result.Succeeded)
 				{
-					//await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+					await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
@@ -166,18 +166,18 @@ namespace shanuMVCUserRoles.Controllers
                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     await UserManager.SendEmailAsync(user.Id, "Xác nhận tài khoản", "Vui lòng click vào link để xác nhận tài khoản <a href=\"" + callbackUrl + "\">Xác Nhận</a>");
                     //Assign Role to user Here   
-                    await this.UserManager.AddToRoleAsync(user.Id, "Employee");
+                    await this.UserManager.AddToRoleAsync(user.Id, "employee");
                     //Ends Here 
-                    return RedirectToAction("Index", "Users");
+                    return RedirectToAction("Index", "Home");
                 }
-				ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin"))
-										  .ToList(), "Name", "Name");
-				AddErrors(result);
-			}
+                ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin"))
+                                          .ToList(), "Name", "Name");
+                AddErrors(result);
+            }
 
-			// If we got this far, something failed, redisplay form
-			return View(model);
-		}
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
 
         //
         // GET: /Account/ConfirmEmail

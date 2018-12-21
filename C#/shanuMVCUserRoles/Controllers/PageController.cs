@@ -29,6 +29,11 @@ namespace shanuMVCUserRoles.Controllers
                 page = db.Pages.Where(x => x.Id == p.Id).SingleOrDefault();
             }
 
+            if (page == null || page.Body == null)
+            {
+                return Json("Không có dữ liệu", JsonRequestBehavior.AllowGet);
+            }
+
             return Json(page.Body, JsonRequestBehavior.AllowGet);
         }
     }

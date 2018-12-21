@@ -46,7 +46,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <header>
             <div class="row">
                 <div class="col-md-3 top-info text-left mt-lg-4">
-                    <h6>Bỏ logo zô đây</h6>
+                    <ul>
+                        <li>
+                            <h1 id="logo"><img src="~/Images/Logo.jpg" id="logoImg" style="width:30%;height:30%;" /></h1>
+                        </li>
+                    </ul>
                     <ul>
                         <li>
                             <i class="fas fa-phone"></i>
@@ -65,11 +69,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 <div class="col-md-3 top-info-cart text-right mt-lg-4">
                     <ul class="cart-inner-info">
-                        <li class="button-log">
-                            <a class="btn-open" href="#">
-                                <span class="fa fa-user" aria-hidden="true"></span>
-                            </a>
-                        </li>
+                        @Html.Partial("_LoginPartial")
+                        @*<li class="button-log">
+            <a class="btn-open" href="">
+                <span class="fa fa-user" aria-hidden="true"></span>
+            </a>
+        </li>*@
                         <li class="galssescart galssescart2 cart cart box_1">
                             <form action="#" method="post" class="last">
                                 <input type="hidden" name="cmd" value="_cart">
@@ -81,7 +86,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </form>
                         </li>
                     </ul>
-                    <!---->
+                    <!---
                     <div class="overlay-login text-left">
                         <button type="button" class="overlay-close1">
                             <i class="fa fa-times" aria-hidden="true"></i>
@@ -107,7 +112,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                                 </form>
                             </div>
-                            <!---->
+                            
                         </div>
                     </div>
                     <!---->

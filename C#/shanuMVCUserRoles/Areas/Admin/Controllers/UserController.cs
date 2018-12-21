@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PagedList;
+using shanuMVCUserRoles.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +11,26 @@ namespace shanuMVCUserRoles.Areas.Admin.Controllers
     public class UserController : Controller
     {
         // GET: Admin/User
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-                return View();
+            try
+            {
+                var pageNumber = page ?? 1;
+                using (HAPINUTSHOPEntities db = new HAPINUTSHOPEntities())
+                {
+                    var listUser = db.AspNetUsers.ToList();
+
+                    // Set pagination
+                    var onePageOfProducts = listUser.ToPagedList(pageNumber, 10);
+                    ViewBag.OnePageOfProducts = onePageOfProducts;
+
+                    return View(listUser);
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

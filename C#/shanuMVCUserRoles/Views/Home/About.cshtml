@@ -1,7 +1,35 @@
-﻿@{
+﻿@model shanuMVCUserRoles.Models.Pages.PageViewModel
+@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<!--/product right-->
+<script type="text/javascript">
+    $(document).ready(function () {
+        var page = {
+            id: 5
+        };
+        $.ajax({
+            type: "POST",
+            url: "/Page/GetPage",
+            data: page,
+            dataType: "json",
+            success: function (response) {
+                $("#pageBody").html(response);
+            },
+            failure: function (response) {
+                alert(response.responseText);
+            },
+            error: function (response) {
+                alert(response.responseText);
+            }
+        });
+    });
+</script>
+<div class="tether-target-attached-center">
+    <div class="wrapper_top_shop">
+        <div id="pageBody"></div>
+    </div>
+</div>
+<!--//product right-->
 
-<p>Use this area to provide additional information.</p>
+
