@@ -56,9 +56,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="col-md-6 logo-w3layouts text-center">
                     <h1 class="logo-w3layouts">
-                        <a class="navbar-brand" href="index.html">
-                            HAPINUT OIL
-                        </a>
+                        @Html.ActionLink("HAPINUT OIL", "Index", "Home", null, new { @class = "navbar-brand" })
                     </h1>
                     <h4 style="color:#ff4e00;">
                         Dầu Lạc Xứ Quảng
@@ -185,6 +183,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- //header -->
     </div>
     <script src="~/Content/js/jquery-2.2.3.min.js"></script>
+    <div class="modal fade" id="myModalDetailProduct" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="pro-des-detail" class="modal-body text-center p-5 mx-auto mw-100">
+                </div>
+
+            </div>
+        </div>
+    </div>
     @RenderBody()
     <!--footer -->
     <footer class="py-lg-5 py-3">
@@ -291,6 +303,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script>
         $("#navbarDropdown").click(function () {
             window.location.href = "@Url.Action("Index", "Shop")";
+        });
+
+        $(".link-product-add-cart").click(function () {
+            var id = $(this).attr("data-id");
+            var page = {
+                id: id
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "/Shop/GetProduct",
+                data: page,
+                dataType: "json",
+                success: function (response) {
+                    $("#pro-des-detail").html(response);
+                    $("#myModalDetailProduct").modal();
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
         });
     </script>
     <!--search jQuery-->

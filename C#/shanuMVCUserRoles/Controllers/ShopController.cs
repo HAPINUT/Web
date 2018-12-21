@@ -21,6 +21,7 @@ namespace shanuMVCUserRoles.Controllers
                 listProduct = db.Products.ToArray().Select(p => new ProductViewModel(p)).ToList();
 
                 ViewBag.CategoryName = string.Empty;
+                ViewBag.IsFeaturedProductsDisplay = false;
             }
             return View(listProduct);
         }
@@ -32,7 +33,9 @@ namespace shanuMVCUserRoles.Controllers
             {
                 listProduct = db.Products.Where(x => x.CategoryId == id).ToArray().Select(p => new ProductViewModel(p)).ToList();
 
-                ViewBag.CategoryName = listProduct.SingleOrDefault().CategoryName;
+                ViewBag.listProductOther = db.Products.Where(x => x.CategoryId != id).ToArray().Select(p => new ProductViewModel(p)).ToList(); ;
+                ViewBag.CategoryName = listProduct.FirstOrDefault().CategoryName;
+                ViewBag.IsFeaturedProductsDisplay = true;
             }
 
             return View("Index", listProduct);
@@ -80,8 +83,27 @@ namespace shanuMVCUserRoles.Controllers
             using (HAPINUTSHOPEntities db = new HAPINUTSHOPEntities())
             {
                 listProduct = db.Products.Where(x => x.Name.ToLower().Contains(keyword.ToLower())).ToArray().Select(p => new ProductViewModel(p)).ToList();
+                ViewBag.IsFeaturedProductsDisplay = false;
+
+                if(listProduct.Count() == 0)
+                {
+                    ViewBag.NoRecord = string.Format("Không có sản phẩm nào phù hợp với kết quả tìm kiếm '{0}'", keyword);
+                }
             }
             return View("Index", listProduct);
+        }
+
+        // POST: Page
+        [HttpPost]
+        public JsonResult GetProduct(Product p)
+        {
+            var product = new Product();
+            using (HAPINUTSHOPEntities db = new HAPINUTSHOPEntities())
+            {
+                product = db.Products.Where(x => x.Id == p.Id).SingleOrDefault();
+            }
+
+            return Json(product.Decription, JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -282,6 +282,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart\CartViewModel.cs" />
+    <Compile Include="Models\Cart\CheckOutInPut.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Pages\PageViewModel.cs" />
@@ -1057,13 +1058,6 @@
     <Content Include="Images\m3.jpg" />
     <Content Include="Images\m4.jpg" />
     <Content Include="Images\paypal.png" />
-    <Content Include="Images\Products\1\Gallery\d1.jpg" />
-    <Content Include="Images\Products\1\Gallery\m1.jpg" />
-    <Content Include="Images\Products\1\Gallery\m2.jpg" />
-    <Content Include="Images\Products\1\Gallery\m3.jpg" />
-    <Content Include="Images\Products\1\Gallery\SP_1lit.jpg" />
-    <Content Include="Images\Products\1\Thumbs\SP_1lit.jpg" />
-    <Content Include="Images\Products\3\Thumbs\SP_2lit.jpg" />
     <Content Include="Images\right.png" />
     <Content Include="Images\s1.jpg" />
     <Content Include="Images\s10.jpeg" />
@@ -1235,7 +1229,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\User\" />
-    <Folder Include="Images\Products\3\Gallery\" />
+    <Folder Include="Images\Products\" />
     <Folder Include="Views\Navigation\" />
   </ItemGroup>
   <ItemGroup>
