@@ -78,7 +78,8 @@
                                                 <img src="~/Images/Products/@item.Id/@item.Image" class="img-fluid" alt="">
                                                 <div class="men-cart-pro">
                                                     <div class="inner-men-cart-pro">
-                                                        @Html.ActionLink("Xem chi tiết", "ProductDetails", "Shop", new { id = @item.Id }, new { @class = "link-product-add-cart" })
+                                                        <div class="link-product-add-cart" data-id="@item.Id">Xem chi tiết</div>
+                                                        @*@Html.ActionLink("Xem chi tiết", "ProductDetails", "Shop", new { id = @item.Id }, new { @class = "link-product-add-cart" })*@
                                                     </div>
                                                 </div>
                                                 <span class="product-new-top">Mới</span>
@@ -125,9 +126,10 @@
                                                     <div class="googles single-item hvr-outline-out">
                                                         <form action="#" method="post">
                                                             <input type="hidden" name="cmd" value="_cart">
-                                                            <input type="hidden" name="add" value="1">
+                                                            <input type="hidden" name="add" value="3">
                                                             <input type="hidden" name="googles_item" value="@item.Name">
                                                             <input type="hidden" name="amount" value="@item.Price">
+                                                            <input type="hidden" name="productid" value="@item.Id">
                                                             <button type="submit" class="googles-cart pgoogles-cart">
                                                                 <i class="fas fa-cart-plus"></i>
                                                             </button>
@@ -146,7 +148,7 @@
             </div>
             <!--//row-->
             <!--/meddle-->
-            <div class="row">
+            @*<div class="row">
                 <div class="col-md-12 middle-slider my-4">
                     <div class="middle-text-info ">
 
@@ -155,7 +157,7 @@
 
                     </div>
                 </div>
-            </div>
+            </div>*@
             <!--//meddle-->
             <!-- /testimonials -->
             <div class="testimonials py-lg-4 py-3 mt-4">
@@ -331,7 +333,6 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -352,7 +353,6 @@
                     </p>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
@@ -364,12 +364,4 @@
 <!-- // modal -->
 <script src="~/Content/js/simplyCountdown.js"></script>
 <link href="~/Content/css/simplyCountdown.css" rel='stylesheet' type='text/css' />
-<script>
-    var d = new Date();
-    simplyCountdown('simply-countdown-custom', {
-        year: d.getFullYear(),
-        month: d.getMonth() + 2,
-        day: 25
-    });
-</script>
 <!--// Count-down -->

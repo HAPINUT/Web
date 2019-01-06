@@ -12,11 +12,36 @@ namespace shanuMVCUserRoles.Controllers
 {
     public class CartController : Controller
     {
-
         // GET: Cart
         public ActionResult Index()
         {
-            return View();
+            return View(new List<CartViewModel>());
+        }
+
+        [HttpPost]
+        public ActionResult Index(List<CheckOutInPut> cartList)
+        {
+            List<CartViewModel> listCartViewModel = new List<CartViewModel>();
+            using (HAPINUTSHOPEntities db = new HAPINUTSHOPEntities())
+            {
+                for(int i = 0; i < cartList.Count(); i++)
+                {
+                    var productId = cartList[i].ProductId;
+                    var product = db.Products.Where(x => x.Id == productId).FirstOrDefault();
+
+                    var cart = new CartViewModel()
+                    {
+                        ProductId = product.Id,
+                        ProductName = product.Name,
+                        Quantity = cartList[i].Quantity,
+                        Price = product.Price * cartList[i].Quantity,
+                        Image = product.ImageName
+                    };
+
+                    listCartViewModel.Add(cart);
+                }
+            }
+            return View(listCartViewModel);
         }
         /*
         private ApplicationSignInManager _signInManager;

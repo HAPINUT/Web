@@ -5,10 +5,13 @@
 <!--/product right-->
 <script type="text/javascript">
     $(document).ready(function () {
-
+        var page = {
+            id: 5
+        };
         $.ajax({
             type: "POST",
-            url: "/Home/GetPage",
+            url: "/Page/GetPage",
+            data: page,
             dataType: "json",
             success: function (response) {
                 $("#pageBody").html(response);
