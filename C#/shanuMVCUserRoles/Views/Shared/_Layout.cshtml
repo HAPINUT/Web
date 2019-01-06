@@ -1,4 +1,5 @@
-﻿<!--
+﻿﻿
+<!--
     Author: W3layouts
     Author URL: http://w3layouts.com
     License: Creative Commons Attribution 3.0 Unported
@@ -13,16 +14,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta name="keywords" content="Goggles a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+dầu đậu phộng, dầu thực vật, dầu bổ tim mạch" />
     <script>
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
 
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
     </script>
+    <link href="~/Content/css/contact.css" rel='stylesheet' type='text/css' />
     <link href="~/Content/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/Content/css/login_overlay.css" rel='stylesheet' type='text/css' />
     <link href="~/Content/css/style6.css" rel='stylesheet' type='text/css' />
@@ -71,10 +73,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <ul class="cart-inner-info">
                         @Html.Partial("_LoginPartial")
                         @*<li class="button-log">
-            <a class="btn-open" href="">
-                <span class="fa fa-user" aria-hidden="true"></span>
-            </a>
-        </li>*@
+                                <a class="btn-open" href="">
+                                    <span class="fa fa-user" aria-hidden="true"></span>
+                                </a>
+                            </li>*@
                         <li class="galssescart galssescart2 cart cart box_1">
                             <form action="#" method="post" class="last">
                                 <input type="hidden" name="cmd" value="_cart">
@@ -112,7 +114,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                                 </form>
                             </div>
-                            
+
                         </div>
                     </div>
                     <!---->
@@ -137,11 +139,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </button>
                     }
                     @*<form action="#" method="post" class="d-flex">
-                        <input class="form-control" type="search" placeholder="Search here..." required="">
-                        <button type="submit" class="btn btn-primary submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </form>*@
+                            <input class="form-control" type="search" placeholder="Search here..." required="">
+                            <button type="submit" class="btn btn-primary submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>*@
                 </div>
                 <!-- open/close -->
             </div>
@@ -342,86 +344,86 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- cart-js -->
     <script src="~/Content/js/minicart.js"></script>
     <script>
-		googles.render();
+        googles.render();
 
-		googles.cart.on('googles_checkout', function (evt) {
-			var items, len, i;
+        googles.cart.on('googles_checkout', function (evt) {
+            var items, len, i;
 
-			if (this.subtotal() > 0) {
-				items = this.items();
+            if (this.subtotal() > 0) {
+                items = this.items();
 
-				for (i = 0, len = items.length; i < len; i++) {}
-			}
-		});
+                for (i = 0, len = items.length; i < len; i++) { }
+            }
+        });
     </script>
     <!-- //cart-js -->
     <script>
-		$(document).ready(function () {
-			$(".button-log a").click(function () {
-				$(".overlay-login").fadeToggle(200);
-				$(this).toggleClass('btn-open').toggleClass('btn-close');
-			});
-		});
-		$('.overlay-close1').on('click', function () {
-			$(".overlay-login").fadeToggle(200);
-			$(".button-log a").toggleClass('btn-open').toggleClass('btn-close');
-			open = false;
-		});
+        $(document).ready(function () {
+            $(".button-log a").click(function () {
+                $(".overlay-login").fadeToggle(200);
+                $(this).toggleClass('btn-open').toggleClass('btn-close');
+            });
+        });
+        $('.overlay-close1').on('click', function () {
+            $(".overlay-login").fadeToggle(200);
+            $(".button-log a").toggleClass('btn-open').toggleClass('btn-close');
+            open = false;
+        });
     </script>
     <!-- carousel -->
     <script src="~/Content/js/owl.carousel.js"></script>
     <script>
-		$(document).ready(function () {
-			$('.owl-carousel').owlCarousel({
-				loop: true,
-				margin: 10,
-				responsiveClass: true,
-				responsive: {
-					0: {
-						items: 1,
-						nav: true
-					},
-					600: {
-						items: 2,
-						nav: false
-					},
-					900: {
-						items: 3,
-						nav: false
-					},
-					1000: {
-						items: 4,
-						nav: true,
-						loop: false,
-						margin: 20
-					}
-				}
-			})
-		})
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    600: {
+                        items: 2,
+                        nav: false
+                    },
+                    900: {
+                        items: 3,
+                        nav: false
+                    },
+                    1000: {
+                        items: 4,
+                        nav: true,
+                        loop: false,
+                        margin: 20
+                    }
+                }
+            })
+        })
     </script>
 
     <!-- //end-smooth-scrolling -->
     <!-- dropdown nav -->
     <script>
-		$(document).ready(function () {
-			$(".dropdown").hover(
-				function () {
-					$('.dropdown-menu', this).stop(true, true).slideDown("fast");
-					$(this).toggleClass('open');
-				},
-				function () {
-					$('.dropdown-menu', this).stop(true, true).slideUp("fast");
-					$(this).toggleClass('open');
-				}
-			);
-		});
+        $(document).ready(function () {
+            $(".dropdown").hover(
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+        });
     </script>
     <!-- //dropdown nav -->
     <script src="~/Content/js/move-top.js"></script>
     <script src="~/Content/js/easing.js"></script>
     <script>
-        jQuery(document).ready(function($) {
-            $(".scroll").click(function(event) {
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
                 event.preventDefault();
                 $('html,body').animate({
                     scrollTop: $(this.hash).offset().top
@@ -430,15 +432,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         });
     </script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             /*
-            						var defaults = {
-            							  containerID: 'toTop', // fading element id
-            							containerHoverID: 'toTopHover', // fading element hover id
-            							scrollSpeed: 1200,
-            							easingType: 'linear'
-            						 };
-            						*/
+                                    var defaults = {
+                                          containerID: 'toTop', // fading element id
+                                        containerHoverID: 'toTopHover', // fading element hover id
+                                        scrollSpeed: 1200,
+                                        easingType: 'linear'
+                                     };
+                                    */
 
             $().UItoTop({
                 easingType: 'easeOutQuart'

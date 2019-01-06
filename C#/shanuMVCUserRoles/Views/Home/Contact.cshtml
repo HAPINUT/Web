@@ -1,17 +1,93 @@
-﻿@{
-    ViewBag.Title = "Contact";
+﻿﻿@{
+    ViewBag.Title = "Liên Hệ";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<section class="banner-bottom-wthreelayouts py-lg-5 py-3">
+    <div class="container">
+        <h3 class="tittle-w3layouts text-center my-lg-4 my-4">Liên Hệ</h3>
+        <div class="inner_sec">
+            <p class="sub text-center mb-lg-5 mb-3">Sự hài lòng của các bạn là động lực cho chúng tôi</p>
+            <div class="address row">
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+                <div class="col-lg-4 address-grid">
+                    <div class="row address-info">
+                        <div class="col-md-3 address-left text-center">
+                            <i class="far fa-map"></i>
+                        </div>
+                        <div class="col-md-9 address-right text-left">
+                            <h6>Địa chỉ</h6>
+                            <p>
+                                Đại Đồng, Đại Lộc, Quảng Nam
+
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 address-grid">
+                    <div class="row address-info">
+                        <div class="col-md-3 address-left text-center">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <div class="col-md-9 address-right text-left">
+                            <h6>Email</h6>
+                            <p>
+                                Email :
+                                <a href="mailto:hapinut@gmail.com"> hapinut@gmail.com</a>
+
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 address-grid">
+                    <div class="row address-info">
+                        <div class="col-md-3 address-left text-center">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="col-md-9 address-right text-left">
+                            <h6>Phone</h6>
+                            <p>+1 234 567 8901</p>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="contact_grid_right">
+                <form action="#" method="post">
+                    <div class="row contact_left_grid">
+                        <div class="col-md-6 con-left">
+                            <div class="form-group">
+                                <label class="my-2">Name</label>
+                                <input class="form-control" type="text" name="Name" placeholder="" required="">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input class="form-control" type="email" name="Email" placeholder="" required="">
+                            </div>
+                            <div class="form-group">
+                                <label class="my-2">Subject</label>
+                                <input class="form-control" type="text" name="Subject" placeholder="" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-6 con-right">
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea id="textarea" placeholder="" required=""></textarea>
+                            </div>
+                            <input class="form-control" type="submit" value="Submit">
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="contact-map">
+
+    <iframe width="100%" height="400px;" src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=48%20Nguy%E1%BB%85n%20%C4%90%C3%ACnh%20Chi%E1%BB%83u%20%2C%20Distrist%201%2C%20Ho%20Chi%20Minh+(Peanut%20Oil)&ie=UTF8&t=&z=17&iwloc=B&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+        <a href="https://www.mapsdirections.info/en/custom-google-maps/" class="map" style="border:0" allowfullscreen="">www.mapsdirections.info</a> by <a href="https://www.mapsdirections.info/en/">Measure area on map</a>
+    </iframe><br />
+</div>
