@@ -89,7 +89,8 @@
                                                     <div class="grid_meta">
                                                         <div class="product_price">
                                                             <h4>
-                                                                @Html.ActionLink(@item.Name, "ProductDetails", "Shop", new { id = @item.Id }, new { })
+                                                                @item.Name
+                                                                @*@Html.ActionLink(@item.Name, "ProductDetails", "Shop", new { id = @item.Id }, new { })*@
                                                             </h4>
                                                             <div class="grid-price mt-2">
                                                                 <span class="money ">@item.Price VND</span>
